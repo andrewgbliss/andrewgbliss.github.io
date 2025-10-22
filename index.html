@@ -1,78 +1,1184 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Tailwind Starter</title>
-    <!--
-      Quick way to bring Tailwind into a single HTML file for prototyping:
-      Uses the official Tailwind Play CDN. Not recommended for production.
-      For production, use Tailwind CLI / PostCSS and generate a compiled CSS file.
-    -->
-
-    <!-- Tailwind Play CDN (good for demos & prototyping) -->
+    <link rel="preload" as="image" href="andy.jpg" />
+    <title>Andrew Bliss - Resume</title>
+    <meta name="description" content="Andrew Bliss - Resume" />
+    <link rel="manifest" href="/manifest.json" />
+    <meta name="robots" content="index, follow" />
+    <meta property="og:title" content="Andrew Bliss" />
+    <meta property="og:description" content="software, audio, create" />
+    <meta property="og:url" content="https://andrewgbliss.com/resume" />
+    <meta property="og:site_name" content="Andrew Bliss" />
+    <meta property="og:image" content="andy.jpg" />
+    <meta property="og:type" content="website" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Andrew Bliss" />
+    <meta name="twitter:description" content="software, audio, create" />
+    <meta name="twitter:image" content="andy.jpg" />
+    <link rel="icon" href="/favicon.ico" type="image/x-icon" sizes="16x16" />
+    <link rel="icon" href="favicon.ico" />
     <script src="https://cdn.tailwindcss.com"></script>
-
-    <!-- Optional: configure Tailwind via the CDN before it runs -->
-    <script>
-      tailwind.config = {
-        theme: {
-          extend: {
-            colors: {
-              brand: {
-                50: '#f5f7ff',
-                500: '#6366f1'
-              }
-            }
-          }
-        }
-      }
-    </script>
-
-    <style>
-      /* small fallback for users with disabled JS (very basic) */
-      .no-js\:hidden { display: none; }
-    </style>
   </head>
-  <body class="bg-gray-100 min-h-screen flex items-center justify-center">
-    <main class="w-full max-w-4xl p-6">
-      <section class="bg-white rounded-2xl shadow-lg p-8 grid gap-6 md:grid-cols-2 items-center">
-        <div>
-          <h1 class="text-3xl font-extrabold text-gray-900 mb-2">Tailwind CSS — Quick Starter</h1>
-          <p class="text-gray-600 mb-4">This file loads Tailwind via the Play CDN for fast prototyping. Customize classes directly in the HTML.</p>
-
-          <div class="flex gap-2">
-            <a class="inline-block px-4 py-2 rounded-lg bg-brand-500 text-white font-medium shadow hover:shadow-md transition" href="#">Primary action</a>
-            <button class="inline-block px-4 py-2 rounded-lg border border-gray-200 text-gray-800">Secondary</button>
+  <body class="__variable_1e4310 __variable_c3aa02 antialiased">
+    <script>
+      ((e, t, r, n, o, i, a, l) => {
+        let s = document.documentElement,
+          c = ["light", "dark"];
+        function u(t) {
+          (Array.isArray(e) ? e : [e]).forEach((e) => {
+            let r = "class" === e,
+              n = r && i ? o.map((e) => i[e] || e) : o;
+            r
+              ? (s.classList.remove(...n), s.classList.add(t))
+              : s.setAttribute(e, t);
+          }),
+            l && c.includes(t) && (s.style.colorScheme = t);
+        }
+        if (n) u(n);
+        else
+          try {
+            let e = localStorage.getItem(t) || r,
+              n =
+                a && "system" === e
+                  ? window.matchMedia("(prefers-color-scheme: dark)").matches
+                    ? "dark"
+                    : "light"
+                  : e;
+            u(n);
+          } catch (e) {}
+      })("class", "theme", "system", null, ["light", "dark"], null, true, true);
+    </script>
+    <div
+      class="p-5 min-h-screen flex items-center justify-center bg-gradient-to-br from-slate-900 via-slate-700 to-slate-900"
+    >
+      <div class="container mx-auto">
+        <div class="grid grid-cols-1 sm:grid-cols-12 gap-0 sm:gap-4">
+          <div class="sm:col-span-4 lg:col-span-3">
+            <div
+              class="rounded-lg border bg-card text-card-foreground shadow-sm p-6"
+            >
+              <div class="flex justify-center">
+                <img src="andy.jpg" alt="Andrew Bliss" class="rounded w-64" />
+              </div>
+              <a href="/"
+                ><h1 class="text-2xl font-bold text-center mt-4 mb-2">
+                  Andrew Bliss
+                </h1></a
+              >
+              <p class="text-sm text-muted-foreground mb-4 text-center">
+                Senior software engineer
+              </p>
+              <div class="flex items-center justify-center gap-4 pb-5">
+                <a
+                  href="Resume.pdf"
+                  class="inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0 bg-primary text-primary-foreground hover:bg-primary/90 h-10 w-full p-4"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  download
+                >
+                  Download PDF </a
+                ><button
+                  class="inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg]:size-4 [&amp;_svg]:shrink-0 border border-input bg-background hover:bg-accent hover:text-accent-foreground h-10 w-10"
+                  type="button"
+                  id="radix-:R14cvfb:"
+                  aria-haspopup="menu"
+                  aria-expanded="false"
+                  data-state="closed"
+                >
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="24"
+                    height="24"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    class="lucide lucide-sun h-[1.2rem] w-[1.2rem] rotate-0 scale-100 transition-all dark:-rotate-90 dark:scale-0"
+                  >
+                    <circle cx="12" cy="12" r="4"></circle>
+                    <path d="M12 2v2"></path>
+                    <path d="M12 20v2"></path>
+                    <path d="m4.93 4.93 1.41 1.41"></path>
+                    <path d="m17.66 17.66 1.41 1.41"></path>
+                    <path d="M2 12h2"></path>
+                    <path d="M20 12h2"></path>
+                    <path d="m6.34 17.66-1.41 1.41"></path>
+                    <path d="m19.07 4.93-1.41 1.41"></path></svg
+                  ><svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="24"
+                    height="24"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    class="lucide lucide-moon absolute h-[1.2rem] w-[1.2rem] rotate-90 scale-0 transition-all dark:rotate-0 dark:scale-100"
+                  >
+                    <path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"></path></svg
+                  ><span class="sr-only">Toggle theme</span>
+                </button>
+              </div>
+              <div class="space-y-2">
+                <div class="flex items-center gap-2">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="24"
+                    height="24"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    class="lucide lucide-house h-4 w-4"
+                  >
+                    <path d="M15 21v-8a1 1 0 0 0-1-1h-4a1 1 0 0 0-1 1v8"></path>
+                    <path
+                      d="M3 10a2 2 0 0 1 .709-1.528l7-5.999a2 2 0 0 1 2.582 0l7 5.999A2 2 0 0 1 21 10v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"
+                    ></path></svg
+                  ><span class="text-sm text-muted-foreground"
+                    >Lehi<!-- -->,
+                    <!-- -->UT</span
+                  >
+                </div>
+                <div class="flex items-center gap-2">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="24"
+                    height="24"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    class="lucide lucide-book h-4 w-4"
+                  >
+                    <path
+                      d="M4 19.5v-15A2.5 2.5 0 0 1 6.5 2H19a1 1 0 0 1 1 1v18a1 1 0 0 1-1 1H6.5a1 1 0 0 1 0-5H20"
+                    ></path></svg
+                  ><span class="text-sm text-muted-foreground"
+                    >andrewgbliss@gmail.com</span
+                  >
+                </div>
+              </div>
+              <div
+                data-orientation="horizontal"
+                role="none"
+                class="shrink-0 bg-border h-[1px] w-full my-4"
+              ></div>
+              <h2 class="text-lg font-semibold mb-2">Education</h2>
+              <div class="flex items-start gap-2">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="24"
+                  height="24"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  class="lucide lucide-school h-4 w-4 mt-1"
+                >
+                  <path d="M14 22v-4a2 2 0 1 0-4 0v4"></path>
+                  <path
+                    d="m18 10 3.447 1.724a1 1 0 0 1 .553.894V20a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2v-7.382a1 1 0 0 1 .553-.894L6 10"
+                  ></path>
+                  <path d="M18 5v17"></path>
+                  <path d="m4 6 7.106-3.553a2 2 0 0 1 1.788 0L20 6"></path>
+                  <path d="M6 5v17"></path>
+                  <circle cx="12" cy="9" r="2"></circle>
+                </svg>
+                <div>
+                  <p class="font-medium">Stevens-Henager College</p>
+                  <p class="text-sm text-muted-foreground">
+                    Bachelors of Computer Science
+                  </p>
+                  <p class="text-sm text-muted-foreground">
+                    Sep, 2002<!-- -->
+                    to
+                    <!-- -->Oct, 2006
+                  </p>
+                </div>
+              </div>
+              <div
+                data-orientation="horizontal"
+                role="none"
+                class="shrink-0 bg-border h-[1px] w-full my-4"
+              ></div>
+              <h2 class="text-lg font-semibold mb-2">Links</h2>
+              <div class="space-y-2 overflow-hidden">
+                <div class="flex items-center gap-2">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="24"
+                    height="24"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    class="lucide lucide-link h-4 w-4"
+                  >
+                    <path
+                      d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"
+                    ></path>
+                    <path
+                      d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"
+                    ></path></svg
+                  ><a
+                    href="https://www.github.com/andrewgbliss"
+                    target="_blank"
+                    rel="noreferrer"
+                    class="text-sm text-muted-foreground hover:underline"
+                    >https://www.github.com/andrewgbliss</a
+                  >
+                </div>
+                <div class="flex items-center gap-2">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="24"
+                    height="24"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    class="lucide lucide-link h-4 w-4"
+                  >
+                    <path
+                      d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"
+                    ></path>
+                    <path
+                      d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"
+                    ></path></svg
+                  ><a
+                    href="https://www.linkedin.com/in/andrewgbliss/"
+                    target="_blank"
+                    rel="noreferrer"
+                    class="text-sm text-muted-foreground hover:underline"
+                    >https://www.linkedin.com/in/andrewgbliss/</a
+                  >
+                </div>
+              </div>
+              <div
+                data-orientation="horizontal"
+                role="none"
+                class="shrink-0 bg-border h-[1px] w-full my-4"
+              ></div>
+              <h2 class="text-lg font-semibold mb-2">Share</h2>
+              <div class="flex gap-2">
+                <a
+                  href="https://www.facebook.com/sharer/sharer.php?u=https://andrewgbliss.com"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="text-[#1877F2]"
+                  ><svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="24"
+                    height="24"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    class="lucide lucide-facebook"
+                  >
+                    <path
+                      d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"
+                    ></path></svg></a
+                ><a
+                  href="https://twitter.com/intent/tweet?url=https://andrewgbliss.com&amp;text=Check%20this%20out!"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="text-[#1877F2]"
+                  ><svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="24"
+                    height="24"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    class="lucide lucide-twitter"
+                  >
+                    <path
+                      d="M22 4s-.7 2.1-2 3.4c1.6 10-9.4 17.3-18 11.6 2.2.1 4.4-.6 6-2C3 15.5.5 9.6 3 5c2.2 2.6 5.6 4.1 9 4-.9-4.2 4-6.6 7-3.8 1.1 0 3-1.2 3-1.2z"
+                    ></path></svg></a
+                ><a
+                  href="https://bsky.app/intent/compose?text=Andrew%20Bliss%20-%20https%3A%2F%2Fandrewgbliss.com"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="text-[#1877F2]"
+                  title="Share on Bluesky"
+                  ><svg
+                    role="img"
+                    xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 24 24"
+                    height="24"
+                    focusable="false"
+                  >
+                    <path
+                      fill="currentColor"
+                      d="M4.907 3.44c.709.12 1.533.501 2.576 1.247C9.28 5.97 10.769 7.739 12 9.564c1.231-1.825 2.72-3.593 4.517-4.877c1.043-.746 1.867-1.127 2.576-1.248c.767-.13 1.29.065 1.615.2C21.717 4.06 22 5.225 22 6.215c0 .201-.086 1.302-.185 2.36c-.052.546-.11 1.108-.166 1.577c-.053.428-.115.88-.19 1.133a4.331 4.331 0 0 1-1.951 2.517c.937.707 1.277 1.856.928 2.984c-.597 1.924-2.737 4.397-4.835 4.618c-1.773.186-2.935-1.325-3.601-2.76c-.666 1.435-1.828 2.946-3.6 2.76c-2.099-.22-4.24-2.694-4.836-4.618c-.35-1.128-.01-2.277.928-2.984a4.331 4.331 0 0 1-1.95-2.517c-.076-.253-.138-.705-.19-1.133a60.58 60.58 0 0 1-.167-1.577C2.085 7.517 2 6.416 2 6.215c0-.99.283-2.155 1.292-2.576c.326-.135.847-.33 1.615-.2M4.05 6.916c.064.818.18 2.108.288 2.992c.032.268.055.545.122.807c.397 1.34 1.929 2.082 3.686 1.887a1 1 0 0 1 .257 1.983c-.756.112-3.315.357-2.928 1.607c.357 1.151 1.848 3.087 3.134 3.222c.928.097 1.5-1.394 1.766-2.045c.275-.674.488-1.38.668-1.982a1 1 0 0 1 1.916 0c.18.602.393 1.308.668 1.982c.266.651.838 2.142 1.766 2.045c1.286-.135 2.777-2.07 3.134-3.222c.387-1.25-2.172-1.495-2.928-1.607a1 1 0 0 1 .257-1.983c1.757.195 3.289-.547 3.686-1.887c.069-.266.089-.536.122-.807a80.35 80.35 0 0 0 .288-2.992c.037-.468.247-1.637-.522-1.506c-.286.049-.823.241-1.749.903c-1.943 1.389-3.705 3.513-4.789 5.64a1 1 0 0 1-1.782 0c-1.084-2.127-2.846-4.251-4.789-5.64c-.926-.662-1.463-.854-1.749-.903c-.784-.134-.559 1.034-.522 1.506"
+                    ></path></svg
+                ></a>
+              </div>
+              <div class="flex justify-center p-5">
+                <div class="fade-up w-fit rounded-lg bg-white p-5">
+                  <svg height="128" width="128" viewBox="0 0 25 25" role="img">
+                    <path
+                      fill="#FFFFFF"
+                      d="M0,0 h25v25H0z"
+                      shape-rendering="crispEdges"
+                    ></path>
+                    <path
+                      fill="#000000"
+                      d="M0 0h7v1H0zM8 0h1v1H8zM10 0h1v1H10zM14 0h1v1H14zM18,0 h7v1H18zM0 1h1v1H0zM6 1h1v1H6zM10 1h1v1H10zM13 1h2v1H13zM18 1h1v1H18zM24,1 h1v1H24zM0 2h1v1H0zM2 2h3v1H2zM6 2h1v1H6zM9 2h1v1H9zM13 2h3v1H13zM18 2h1v1H18zM20 2h3v1H20zM24,2 h1v1H24zM0 3h1v1H0zM2 3h3v1H2zM6 3h1v1H6zM9 3h1v1H9zM13 3h1v1H13zM15 3h2v1H15zM18 3h1v1H18zM20 3h3v1H20zM24,3 h1v1H24zM0 4h1v1H0zM2 4h3v1H2zM6 4h1v1H6zM9 4h1v1H9zM16 4h1v1H16zM18 4h1v1H18zM20 4h3v1H20zM24,4 h1v1H24zM0 5h1v1H0zM6 5h1v1H6zM11 5h1v1H11zM13 5h1v1H13zM16 5h1v1H16zM18 5h1v1H18zM24,5 h1v1H24zM0 6h7v1H0zM8 6h1v1H8zM10 6h1v1H10zM12 6h1v1H12zM14 6h1v1H14zM16 6h1v1H16zM18,6 h7v1H18zM8 7h1v1H8zM10 7h4v1H10zM15 7h1v1H15zM0 8h2v1H0zM3 8h2v1H3zM6 8h1v1H6zM9 8h2v1H9zM14 8h3v1H14zM18 8h1v1H18zM24,8 h1v1H24zM2 9h1v1H2zM5 9h1v1H5zM8 9h4v1H8zM15 9h1v1H15zM19 9h5v1H19zM0 10h1v1H0zM2 10h1v1H2zM4 10h1v1H4zM6 10h2v1H6zM10 10h2v1H10zM13 10h4v1H13zM19 10h3v1H19zM24,10 h1v1H24zM0 11h1v1H0zM2 11h2v1H2zM7 11h5v1H7zM14 11h2v1H14zM17 11h1v1H17zM21,11 h4v1H21zM1 12h4v1H1zM6 12h4v1H6zM11 12h2v1H11zM14 12h3v1H14zM18 12h2v1H18zM24,12 h1v1H24zM0 13h2v1H0zM5 13h1v1H5zM7 13h2v1H7zM11 13h1v1H11zM14 13h3v1H14zM20 13h1v1H20zM23 13h1v1H23zM0 14h2v1H0zM3 14h4v1H3zM9 14h1v1H9zM12 14h1v1H12zM14 14h2v1H14zM17 14h2v1H17zM20,14 h5v1H20zM0 15h1v1H0zM4 15h2v1H4zM7 15h1v1H7zM9 15h1v1H9zM11 15h2v1H11zM14 15h2v1H14zM18 15h2v1H18zM21 15h2v1H21zM24,15 h1v1H24zM0 16h1v1H0zM2 16h2v1H2zM5 16h3v1H5zM9 16h3v1H9zM13 16h1v1H13zM15 16h6v1H15zM22 16h2v1H22zM8 17h3v1H8zM15 17h2v1H15zM20 17h1v1H20zM22 17h2v1H22zM0 18h7v1H0zM11 18h1v1H11zM14 18h1v1H14zM16 18h1v1H16zM18 18h1v1H18zM20 18h1v1H20zM24,18 h1v1H24zM0 19h1v1H0zM6 19h1v1H6zM9 19h3v1H9zM13 19h1v1H13zM15 19h2v1H15zM20 19h1v1H20zM23 19h1v1H23zM0 20h1v1H0zM2 20h3v1H2zM6 20h1v1H6zM8 20h1v1H8zM11 20h2v1H11zM14 20h7v1H14zM23 20h1v1H23zM0 21h1v1H0zM2 21h3v1H2zM6 21h1v1H6zM8 21h1v1H8zM10 21h9v1H10zM23,21 h2v1H23zM0 22h1v1H0zM2 22h3v1H2zM6 22h1v1H6zM11 22h1v1H11zM13 22h1v1H13zM20,22 h5v1H20zM0 23h1v1H0zM6 23h1v1H6zM8 23h1v1H8zM10 23h2v1H10zM14 23h1v1H14zM17 23h4v1H17zM22,23 h3v1H22zM0 24h7v1H0zM8 24h3v1H8zM12 24h1v1H12zM16 24h2v1H16zM21 24h1v1H21zM24,24 h1v1H24z"
+                      shape-rendering="crispEdges"
+                    ></path>
+                  </svg>
+                </div>
+              </div>
+            </div>
           </div>
-
-          <ul class="mt-6 space-y-2 text-sm text-gray-700">
-            <li>• Responsive utilities (sm:, md:, lg:, xl:)</li>
-            <li>• State variants (hover:, focus:, active:)</li>
-            <li>• Dark mode and plugins available via config</li>
-          </ul>
+          <div class="sm:col-span-8 lg:col-span-9">
+            <div
+              class="rounded-lg border bg-card text-card-foreground shadow-sm p-6"
+            >
+              <h2 class="text-2xl font-bold mb-6">Work Experience</h2>
+              <div class="space-y-6">
+                <div>
+                  <h3 class="text-lg font-semibold">
+                    Senior Software Engineer<!-- -->
+                    /
+                    <!-- -->Carketa
+                  </h3>
+                  <div class="flex items-center gap-2 my-2">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="24"
+                      height="24"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="2"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      class="lucide lucide-calendar h-4 w-4"
+                    >
+                      <path d="M8 2v4"></path>
+                      <path d="M16 2v4"></path>
+                      <rect width="18" height="18" x="3" y="4" rx="2"></rect>
+                      <path d="M3 10h18"></path></svg
+                    ><span class="text-sm"
+                      >Sep, 2022<!-- -->
+                      -
+                      <!-- -->Current</span
+                    >
+                  </div>
+                  <ul class="space-y-2 my-4">
+                    <li class="flex items-start gap-2">
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="24"
+                        height="24"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="2"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        class="lucide lucide-circle h-3 w-3 mt-1.5"
+                      >
+                        <circle cx="12" cy="12" r="10"></circle></svg
+                      ><span class="text-sm text-muted-foreground"
+                        >Developed and maintained web applications using
+                        Next.js, React, and Node.js, resulting in faster
+                        deployments, conversions, and MRR.</span
+                      >
+                    </li>
+                    <li class="flex items-start gap-2">
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="24"
+                        height="24"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="2"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        class="lucide lucide-circle h-3 w-3 mt-1.5"
+                      >
+                        <circle cx="12" cy="12" r="10"></circle></svg
+                      ><span class="text-sm text-muted-foreground"
+                        >Designed and managed database schemas in PostgreSQL,
+                        optimizing performance and reliability.</span
+                      >
+                    </li>
+                    <li class="flex items-start gap-2">
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="24"
+                        height="24"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="2"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        class="lucide lucide-circle h-3 w-3 mt-1.5"
+                      >
+                        <circle cx="12" cy="12" r="10"></circle></svg
+                      ><span class="text-sm text-muted-foreground"
+                        >Troubleshot and resolved software defects and issues in
+                        a timely and efficient manner.</span
+                      >
+                    </li>
+                  </ul>
+                  <div class="flex flex-wrap gap-2">
+                    <div
+                      class="inline-flex items-center rounded-full border px-2.5 py-0.5 text-xs font-semibold transition-colors focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 border-transparent bg-secondary text-secondary-foreground hover:bg-secondary/80"
+                    >
+                      React
+                    </div>
+                    <div
+                      class="inline-flex items-center rounded-full border px-2.5 py-0.5 text-xs font-semibold transition-colors focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 border-transparent bg-secondary text-secondary-foreground hover:bg-secondary/80"
+                    >
+                      NextJs
+                    </div>
+                    <div
+                      class="inline-flex items-center rounded-full border px-2.5 py-0.5 text-xs font-semibold transition-colors focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 border-transparent bg-secondary text-secondary-foreground hover:bg-secondary/80"
+                    >
+                      Typescript
+                    </div>
+                    <div
+                      class="inline-flex items-center rounded-full border px-2.5 py-0.5 text-xs font-semibold transition-colors focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 border-transparent bg-secondary text-secondary-foreground hover:bg-secondary/80"
+                    >
+                      Postgres
+                    </div>
+                    <div
+                      class="inline-flex items-center rounded-full border px-2.5 py-0.5 text-xs font-semibold transition-colors focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 border-transparent bg-secondary text-secondary-foreground hover:bg-secondary/80"
+                    >
+                      Google Cloud
+                    </div>
+                  </div>
+                  <div
+                    data-orientation="horizontal"
+                    role="none"
+                    class="shrink-0 bg-border h-[1px] w-full my-6"
+                  ></div>
+                </div>
+                <div>
+                  <h3 class="text-lg font-semibold">
+                    Senior Software Engineer<!-- -->
+                    /
+                    <!-- -->nth-child consulting
+                  </h3>
+                  <div class="flex items-center gap-2 my-2">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="24"
+                      height="24"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="2"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      class="lucide lucide-calendar h-4 w-4"
+                    >
+                      <path d="M8 2v4"></path>
+                      <path d="M16 2v4"></path>
+                      <rect width="18" height="18" x="3" y="4" rx="2"></rect>
+                      <path d="M3 10h18"></path></svg
+                    ><span class="text-sm"
+                      >Dec, 2017<!-- -->
+                      -
+                      <!-- -->Sep, 2022</span
+                    >
+                  </div>
+                  <ul class="space-y-2 my-4">
+                    <li class="flex items-start gap-2">
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="24"
+                        height="24"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="2"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        class="lucide lucide-circle h-3 w-3 mt-1.5"
+                      >
+                        <circle cx="12" cy="12" r="10"></circle></svg
+                      ><span class="text-sm text-muted-foreground"
+                        >End to end project management. Creating features,
+                        tasks, and training for junior devs.</span
+                      >
+                    </li>
+                    <li class="flex items-start gap-2">
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="24"
+                        height="24"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="2"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        class="lucide lucide-circle h-3 w-3 mt-1.5"
+                      >
+                        <circle cx="12" cy="12" r="10"></circle></svg
+                      ><span class="text-sm text-muted-foreground"
+                        >Planned the structure for each business application
+                        with documentation, testing, and code reviews.</span
+                      >
+                    </li>
+                    <li class="flex items-start gap-2">
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="24"
+                        height="24"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="2"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        class="lucide lucide-circle h-3 w-3 mt-1.5"
+                      >
+                        <circle cx="12" cy="12" r="10"></circle></svg
+                      ><span class="text-sm text-muted-foreground"
+                        >Created and deployed frontend apps, microservices, REST
+                        API, webhooks, websockets, cloud functions.</span
+                      >
+                    </li>
+                  </ul>
+                  <div class="flex flex-wrap gap-2">
+                    <div
+                      class="inline-flex items-center rounded-full border px-2.5 py-0.5 text-xs font-semibold transition-colors focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 border-transparent bg-secondary text-secondary-foreground hover:bg-secondary/80"
+                    >
+                      React
+                    </div>
+                    <div
+                      class="inline-flex items-center rounded-full border px-2.5 py-0.5 text-xs font-semibold transition-colors focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 border-transparent bg-secondary text-secondary-foreground hover:bg-secondary/80"
+                    >
+                      Node
+                    </div>
+                    <div
+                      class="inline-flex items-center rounded-full border px-2.5 py-0.5 text-xs font-semibold transition-colors focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 border-transparent bg-secondary text-secondary-foreground hover:bg-secondary/80"
+                    >
+                      Typescript
+                    </div>
+                    <div
+                      class="inline-flex items-center rounded-full border px-2.5 py-0.5 text-xs font-semibold transition-colors focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 border-transparent bg-secondary text-secondary-foreground hover:bg-secondary/80"
+                    >
+                      NextJs
+                    </div>
+                    <div
+                      class="inline-flex items-center rounded-full border px-2.5 py-0.5 text-xs font-semibold transition-colors focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 border-transparent bg-secondary text-secondary-foreground hover:bg-secondary/80"
+                    >
+                      Postgres
+                    </div>
+                    <div
+                      class="inline-flex items-center rounded-full border px-2.5 py-0.5 text-xs font-semibold transition-colors focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 border-transparent bg-secondary text-secondary-foreground hover:bg-secondary/80"
+                    >
+                      Google Cloud
+                    </div>
+                  </div>
+                  <div
+                    data-orientation="horizontal"
+                    role="none"
+                    class="shrink-0 bg-border h-[1px] w-full my-6"
+                  ></div>
+                </div>
+                <div>
+                  <h3 class="text-lg font-semibold">
+                    Senior Full Stack Developer<!-- -->
+                    /
+                    <!-- -->Grow
+                  </h3>
+                  <div class="flex items-center gap-2 my-2">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="24"
+                      height="24"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="2"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      class="lucide lucide-calendar h-4 w-4"
+                    >
+                      <path d="M8 2v4"></path>
+                      <path d="M16 2v4"></path>
+                      <rect width="18" height="18" x="3" y="4" rx="2"></rect>
+                      <path d="M3 10h18"></path></svg
+                    ><span class="text-sm"
+                      >Feb, 2014<!-- -->
+                      -
+                      <!-- -->Nov, 2017</span
+                    >
+                  </div>
+                  <ul class="space-y-2 my-4">
+                    <li class="flex items-start gap-2">
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="24"
+                        height="24"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="2"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        class="lucide lucide-circle h-3 w-3 mt-1.5"
+                      >
+                        <circle cx="12" cy="12" r="10"></circle></svg
+                      ><span class="text-sm text-muted-foreground"
+                        >Designed and developed REST APIs that connected to
+                        hundreds of 3rd party data sources using React, Node and
+                        Postgres.</span
+                      >
+                    </li>
+                    <li class="flex items-start gap-2">
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="24"
+                        height="24"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="2"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        class="lucide lucide-circle h-3 w-3 mt-1.5"
+                      >
+                        <circle cx="12" cy="12" r="10"></circle></svg
+                      ><span class="text-sm text-muted-foreground"
+                        >Implemented a data warehouse that was scalable to
+                        handle heavy workloads.</span
+                      >
+                    </li>
+                    <li class="flex items-start gap-2">
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="24"
+                        height="24"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="2"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        class="lucide lucide-circle h-3 w-3 mt-1.5"
+                      >
+                        <circle cx="12" cy="12" r="10"></circle></svg
+                      ><span class="text-sm text-muted-foreground"
+                        >Created the business intelligence dashboard that would
+                        connect in real time to provide analytics for the
+                        client.</span
+                      >
+                    </li>
+                  </ul>
+                  <div class="flex flex-wrap gap-2">
+                    <div
+                      class="inline-flex items-center rounded-full border px-2.5 py-0.5 text-xs font-semibold transition-colors focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 border-transparent bg-secondary text-secondary-foreground hover:bg-secondary/80"
+                    >
+                      React
+                    </div>
+                    <div
+                      class="inline-flex items-center rounded-full border px-2.5 py-0.5 text-xs font-semibold transition-colors focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 border-transparent bg-secondary text-secondary-foreground hover:bg-secondary/80"
+                    >
+                      Node
+                    </div>
+                    <div
+                      class="inline-flex items-center rounded-full border px-2.5 py-0.5 text-xs font-semibold transition-colors focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 border-transparent bg-secondary text-secondary-foreground hover:bg-secondary/80"
+                    >
+                      Postgres
+                    </div>
+                    <div
+                      class="inline-flex items-center rounded-full border px-2.5 py-0.5 text-xs font-semibold transition-colors focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 border-transparent bg-secondary text-secondary-foreground hover:bg-secondary/80"
+                    >
+                      AWS
+                    </div>
+                  </div>
+                  <div
+                    data-orientation="horizontal"
+                    role="none"
+                    class="shrink-0 bg-border h-[1px] w-full my-6"
+                  ></div>
+                </div>
+                <div>
+                  <h3 class="text-lg font-semibold">
+                    Senior Web Developer<!-- -->
+                    /
+                    <!-- -->Rain
+                  </h3>
+                  <div class="flex items-center gap-2 my-2">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="24"
+                      height="24"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="2"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      class="lucide lucide-calendar h-4 w-4"
+                    >
+                      <path d="M8 2v4"></path>
+                      <path d="M16 2v4"></path>
+                      <rect width="18" height="18" x="3" y="4" rx="2"></rect>
+                      <path d="M3 10h18"></path></svg
+                    ><span class="text-sm"
+                      >Mar, 2013<!-- -->
+                      -
+                      <!-- -->Feb, 2014</span
+                    >
+                  </div>
+                  <ul class="space-y-2 my-4">
+                    <li class="flex items-start gap-2">
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="24"
+                        height="24"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="2"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        class="lucide lucide-circle h-3 w-3 mt-1.5"
+                      >
+                        <circle cx="12" cy="12" r="10"></circle></svg
+                      ><span class="text-sm text-muted-foreground"
+                        >Created a PHP RESTful API in CakePHP that would
+                        interface with School Specialty, Clever, SES, and Twilio
+                        APIs.</span
+                      >
+                    </li>
+                    <li class="flex items-start gap-2">
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="24"
+                        height="24"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="2"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        class="lucide lucide-circle h-3 w-3 mt-1.5"
+                      >
+                        <circle cx="12" cy="12" r="10"></circle></svg
+                      ><span class="text-sm text-muted-foreground"
+                        >SaaS application would deliver alerts to students about
+                        events. Students, Teachers and Admins could use this app
+                        to display calendar information and course
+                        instruction.</span
+                      >
+                    </li>
+                    <li class="flex items-start gap-2">
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="24"
+                        height="24"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="2"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        class="lucide lucide-circle h-3 w-3 mt-1.5"
+                      >
+                        <circle cx="12" cy="12" r="10"></circle></svg
+                      ><span class="text-sm text-muted-foreground"
+                        >Developed application structure that could be used
+                        offline.</span
+                      >
+                    </li>
+                  </ul>
+                  <div class="flex flex-wrap gap-2">
+                    <div
+                      class="inline-flex items-center rounded-full border px-2.5 py-0.5 text-xs font-semibold transition-colors focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 border-transparent bg-secondary text-secondary-foreground hover:bg-secondary/80"
+                    >
+                      PHP
+                    </div>
+                    <div
+                      class="inline-flex items-center rounded-full border px-2.5 py-0.5 text-xs font-semibold transition-colors focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 border-transparent bg-secondary text-secondary-foreground hover:bg-secondary/80"
+                    >
+                      MySQL
+                    </div>
+                    <div
+                      class="inline-flex items-center rounded-full border px-2.5 py-0.5 text-xs font-semibold transition-colors focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 border-transparent bg-secondary text-secondary-foreground hover:bg-secondary/80"
+                    >
+                      Angular
+                    </div>
+                    <div
+                      class="inline-flex items-center rounded-full border px-2.5 py-0.5 text-xs font-semibold transition-colors focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 border-transparent bg-secondary text-secondary-foreground hover:bg-secondary/80"
+                    >
+                      HTML
+                    </div>
+                    <div
+                      class="inline-flex items-center rounded-full border px-2.5 py-0.5 text-xs font-semibold transition-colors focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 border-transparent bg-secondary text-secondary-foreground hover:bg-secondary/80"
+                    >
+                      CSS
+                    </div>
+                  </div>
+                  <div
+                    data-orientation="horizontal"
+                    role="none"
+                    class="shrink-0 bg-border h-[1px] w-full my-6"
+                  ></div>
+                </div>
+                <div>
+                  <h3 class="text-lg font-semibold">
+                    Web Developer<!-- -->
+                    /
+                    <!-- -->Zagg
+                  </h3>
+                  <div class="flex items-center gap-2 my-2">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="24"
+                      height="24"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="2"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      class="lucide lucide-calendar h-4 w-4"
+                    >
+                      <path d="M8 2v4"></path>
+                      <path d="M16 2v4"></path>
+                      <rect width="18" height="18" x="3" y="4" rx="2"></rect>
+                      <path d="M3 10h18"></path></svg
+                    ><span class="text-sm"
+                      >Dec, 2010<!-- -->
+                      -
+                      <!-- -->Feb, 2013</span
+                    >
+                  </div>
+                  <ul class="space-y-2 my-4">
+                    <li class="flex items-start gap-2">
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="24"
+                        height="24"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="2"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        class="lucide lucide-circle h-3 w-3 mt-1.5"
+                      >
+                        <circle cx="12" cy="12" r="10"></circle></svg
+                      ><span class="text-sm text-muted-foreground"
+                        >Created APIs that would interface with 3rd party credit
+                        card APIs. Authorize.net, Cyber Source and PayPal.</span
+                      >
+                    </li>
+                    <li class="flex items-start gap-2">
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="24"
+                        height="24"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="2"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        class="lucide lucide-circle h-3 w-3 mt-1.5"
+                      >
+                        <circle cx="12" cy="12" r="10"></circle></svg
+                      ><span class="text-sm text-muted-foreground"
+                        >Created a PHP Backend system that customer service
+                        could use to create discounts, offers, sales, and
+                        orders.</span
+                      >
+                    </li>
+                    <li class="flex items-start gap-2">
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="24"
+                        height="24"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="2"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        class="lucide lucide-circle h-3 w-3 mt-1.5"
+                      >
+                        <circle cx="12" cy="12" r="10"></circle></svg
+                      ><span class="text-sm text-muted-foreground"
+                        >Developed HTML5 Frontend features that made checkout
+                        processes faster.</span
+                      >
+                    </li>
+                  </ul>
+                  <div class="flex flex-wrap gap-2">
+                    <div
+                      class="inline-flex items-center rounded-full border px-2.5 py-0.5 text-xs font-semibold transition-colors focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 border-transparent bg-secondary text-secondary-foreground hover:bg-secondary/80"
+                    >
+                      PHP
+                    </div>
+                    <div
+                      class="inline-flex items-center rounded-full border px-2.5 py-0.5 text-xs font-semibold transition-colors focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 border-transparent bg-secondary text-secondary-foreground hover:bg-secondary/80"
+                    >
+                      MySQL
+                    </div>
+                    <div
+                      class="inline-flex items-center rounded-full border px-2.5 py-0.5 text-xs font-semibold transition-colors focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 border-transparent bg-secondary text-secondary-foreground hover:bg-secondary/80"
+                    >
+                      Javascript
+                    </div>
+                    <div
+                      class="inline-flex items-center rounded-full border px-2.5 py-0.5 text-xs font-semibold transition-colors focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 border-transparent bg-secondary text-secondary-foreground hover:bg-secondary/80"
+                    >
+                      HTML
+                    </div>
+                    <div
+                      class="inline-flex items-center rounded-full border px-2.5 py-0.5 text-xs font-semibold transition-colors focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 border-transparent bg-secondary text-secondary-foreground hover:bg-secondary/80"
+                    >
+                      CSS
+                    </div>
+                  </div>
+                  <div
+                    data-orientation="horizontal"
+                    role="none"
+                    class="shrink-0 bg-border h-[1px] w-full my-6"
+                  ></div>
+                </div>
+                <div>
+                  <h3 class="text-lg font-semibold">
+                    Web Developer<!-- -->
+                    /
+                    <!-- -->Classtop
+                  </h3>
+                  <div class="flex items-center gap-2 my-2">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="24"
+                      height="24"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="2"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      class="lucide lucide-calendar h-4 w-4"
+                    >
+                      <path d="M8 2v4"></path>
+                      <path d="M16 2v4"></path>
+                      <rect width="18" height="18" x="3" y="4" rx="2"></rect>
+                      <path d="M3 10h18"></path></svg
+                    ><span class="text-sm"
+                      >Mar, 2008<!-- -->
+                      -
+                      <!-- -->Nov, 2010</span
+                    >
+                  </div>
+                  <ul class="space-y-2 my-4">
+                    <li class="flex items-start gap-2">
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="24"
+                        height="24"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="2"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        class="lucide lucide-circle h-3 w-3 mt-1.5"
+                      >
+                        <circle cx="12" cy="12" r="10"></circle></svg
+                      ><span class="text-sm text-muted-foreground"
+                        >Maintained a legacy C# application and developed a low
+                        cost efficient PHP application that interfaced with
+                        Facebook APIs.</span
+                      >
+                    </li>
+                    <li class="flex items-start gap-2">
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="24"
+                        height="24"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="2"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        class="lucide lucide-circle h-3 w-3 mt-1.5"
+                      >
+                        <circle cx="12" cy="12" r="10"></circle></svg
+                      ><span class="text-sm text-muted-foreground"
+                        >Solved slow database issues caused by many to many
+                        connections by implementing a shard system.</span
+                      >
+                    </li>
+                  </ul>
+                  <div class="flex flex-wrap gap-2">
+                    <div
+                      class="inline-flex items-center rounded-full border px-2.5 py-0.5 text-xs font-semibold transition-colors focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 border-transparent bg-secondary text-secondary-foreground hover:bg-secondary/80"
+                    >
+                      PHP
+                    </div>
+                    <div
+                      class="inline-flex items-center rounded-full border px-2.5 py-0.5 text-xs font-semibold transition-colors focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 border-transparent bg-secondary text-secondary-foreground hover:bg-secondary/80"
+                    >
+                      MySQL
+                    </div>
+                    <div
+                      class="inline-flex items-center rounded-full border px-2.5 py-0.5 text-xs font-semibold transition-colors focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 border-transparent bg-secondary text-secondary-foreground hover:bg-secondary/80"
+                    >
+                      Javascript
+                    </div>
+                    <div
+                      class="inline-flex items-center rounded-full border px-2.5 py-0.5 text-xs font-semibold transition-colors focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 border-transparent bg-secondary text-secondary-foreground hover:bg-secondary/80"
+                    >
+                      HTML
+                    </div>
+                    <div
+                      class="inline-flex items-center rounded-full border px-2.5 py-0.5 text-xs font-semibold transition-colors focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 border-transparent bg-secondary text-secondary-foreground hover:bg-secondary/80"
+                    >
+                      CSS
+                    </div>
+                  </div>
+                  <div
+                    data-orientation="horizontal"
+                    role="none"
+                    class="shrink-0 bg-border h-[1px] w-full my-6"
+                  ></div>
+                </div>
+                <div>
+                  <h3 class="text-lg font-semibold">
+                    Web Developer<!-- -->
+                    /
+                    <!-- -->Stevens-Henager College
+                  </h3>
+                  <div class="flex items-center gap-2 my-2">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="24"
+                      height="24"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="2"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      class="lucide lucide-calendar h-4 w-4"
+                    >
+                      <path d="M8 2v4"></path>
+                      <path d="M16 2v4"></path>
+                      <rect width="18" height="18" x="3" y="4" rx="2"></rect>
+                      <path d="M3 10h18"></path></svg
+                    ><span class="text-sm"
+                      >Apr, 2002<!-- -->
+                      -
+                      <!-- -->Oct, 2006</span
+                    >
+                  </div>
+                  <ul class="space-y-2 my-4">
+                    <li class="flex items-start gap-2">
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="24"
+                        height="24"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="2"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        class="lucide lucide-circle h-3 w-3 mt-1.5"
+                      >
+                        <circle cx="12" cy="12" r="10"></circle></svg
+                      ><span class="text-sm text-muted-foreground"
+                        >Created and maintained many ColdFusion servers that
+                        processed student, financial, and admissions
+                        information.</span
+                      >
+                    </li>
+                    <li class="flex items-start gap-2">
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="24"
+                        height="24"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="2"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        class="lucide lucide-circle h-3 w-3 mt-1.5"
+                      >
+                        <circle cx="12" cy="12" r="10"></circle></svg
+                      ><span class="text-sm text-muted-foreground"
+                        >Implemented many tools in reporting and scheduling that
+                        improved many admin processes.</span
+                      >
+                    </li>
+                  </ul>
+                  <div class="flex flex-wrap gap-2">
+                    <div
+                      class="inline-flex items-center rounded-full border px-2.5 py-0.5 text-xs font-semibold transition-colors focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 border-transparent bg-secondary text-secondary-foreground hover:bg-secondary/80"
+                    >
+                      Coldfusion
+                    </div>
+                    <div
+                      class="inline-flex items-center rounded-full border px-2.5 py-0.5 text-xs font-semibold transition-colors focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 border-transparent bg-secondary text-secondary-foreground hover:bg-secondary/80"
+                    >
+                      Oracle
+                    </div>
+                    <div
+                      class="inline-flex items-center rounded-full border px-2.5 py-0.5 text-xs font-semibold transition-colors focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 border-transparent bg-secondary text-secondary-foreground hover:bg-secondary/80"
+                    >
+                      Javascript
+                    </div>
+                    <div
+                      class="inline-flex items-center rounded-full border px-2.5 py-0.5 text-xs font-semibold transition-colors focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 border-transparent bg-secondary text-secondary-foreground hover:bg-secondary/80"
+                    >
+                      HTML
+                    </div>
+                    <div
+                      class="inline-flex items-center rounded-full border px-2.5 py-0.5 text-xs font-semibold transition-colors focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 border-transparent bg-secondary text-secondary-foreground hover:bg-secondary/80"
+                    >
+                      CSS
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
-
-        <div class="p-4 bg-gray-50 rounded-lg">
-          <div class="mb-4">
-            <label class="block text-xs font-semibold text-gray-500">Email</label>
-            <input class="w-full mt-1 p-3 rounded-md border border-gray-200 focus:outline-none focus:ring-2 focus:ring-brand-500" placeholder="you@example.com" />
-          </div>
-
-          <div>
-            <label class="block text-xs font-semibold text-gray-500">Message</label>
-            <textarea class="w-full mt-1 p-3 rounded-md border border-gray-200 focus:outline-none focus:ring-2 focus:ring-brand-500" rows="4" placeholder="Say hi..."></textarea>
-          </div>
-        </div>
-      </section>
-
-      <footer class="mt-6 text-center text-xs text-gray-500">Made with Tailwind — prototype only</footer>
-    </main>
-
-    <noscript>
-      <div class="no-js:hidden fixed inset-0 bg-white flex items-center justify-center">
-        <p class="text-gray-700">Tailwind requires JavaScript when loaded via the Play CDN. Please enable JS to see styles.</p>
       </div>
-    </noscript>
+    </div>
   </body>
 </html>
