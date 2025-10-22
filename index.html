@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Tailwind Starter</title>
+    <!--
+      Quick way to bring Tailwind into a single HTML file for prototyping:
+      Uses the official Tailwind Play CDN. Not recommended for production.
+      For production, use Tailwind CLI / PostCSS and generate a compiled CSS file.
+    -->
+
+    <!-- Tailwind Play CDN (good for demos & prototyping) -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Optional: configure Tailwind via the CDN before it runs -->
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              brand: {
+                50: '#f5f7ff',
+                500: '#6366f1'
+              }
+            }
+          }
+        }
+      }
+    </script>
+
+    <style>
+      /* small fallback for users with disabled JS (very basic) */
+      .no-js\:hidden { display: none; }
+    </style>
+  </head>
+  <body class="bg-gray-100 min-h-screen flex items-center justify-center">
+    <main class="w-full max-w-4xl p-6">
+      <section class="bg-white rounded-2xl shadow-lg p-8 grid gap-6 md:grid-cols-2 items-center">
+        <div>
+          <h1 class="text-3xl font-extrabold text-gray-900 mb-2">Tailwind CSS — Quick Starter</h1>
+          <p class="text-gray-600 mb-4">This file loads Tailwind via the Play CDN for fast prototyping. Customize classes directly in the HTML.</p>
+
+          <div class="flex gap-2">
+            <a class="inline-block px-4 py-2 rounded-lg bg-brand-500 text-white font-medium shadow hover:shadow-md transition" href="#">Primary action</a>
+            <button class="inline-block px-4 py-2 rounded-lg border border-gray-200 text-gray-800">Secondary</button>
+          </div>
+
+          <ul class="mt-6 space-y-2 text-sm text-gray-700">
+            <li>• Responsive utilities (sm:, md:, lg:, xl:)</li>
+            <li>• State variants (hover:, focus:, active:)</li>
+            <li>• Dark mode and plugins available via config</li>
+          </ul>
+        </div>
+
+        <div class="p-4 bg-gray-50 rounded-lg">
+          <div class="mb-4">
+            <label class="block text-xs font-semibold text-gray-500">Email</label>
+            <input class="w-full mt-1 p-3 rounded-md border border-gray-200 focus:outline-none focus:ring-2 focus:ring-brand-500" placeholder="you@example.com" />
+          </div>
+
+          <div>
+            <label class="block text-xs font-semibold text-gray-500">Message</label>
+            <textarea class="w-full mt-1 p-3 rounded-md border border-gray-200 focus:outline-none focus:ring-2 focus:ring-brand-500" rows="4" placeholder="Say hi..."></textarea>
+          </div>
+        </div>
+      </section>
+
+      <footer class="mt-6 text-center text-xs text-gray-500">Made with Tailwind — prototype only</footer>
+    </main>
+
+    <noscript>
+      <div class="no-js:hidden fixed inset-0 bg-white flex items-center justify-center">
+        <p class="text-gray-700">Tailwind requires JavaScript when loaded via the Play CDN. Please enable JS to see styles.</p>
+      </div>
+    </noscript>
+  </body>
+</html>
