@@ -39,7 +39,6 @@ export const metadata: Metadata = {
 export default function Page() {
   return (
     <div className="p-5 min-h-screen w-full flex items-center justify-center bg-linear-to-br from-slate-950 via-slate-800 to-slate-950">
-      123
       <HoverLinks />
     </div>
   );
