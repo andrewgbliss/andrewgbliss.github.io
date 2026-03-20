@@ -37,7 +37,7 @@ export const resume: ResumeOptions = {
   email: "andrewgbliss@gmail.com",
   bio: `Senior Full Stack Software Engineer`,
   tagline:
-    "Senior full-stack engineer delivering secure, high-performance, reliable software products end-to-end, from UX to APIs and large-scale data systems.",
+    "Senior AI full-stack engineer delivering secure, high-performance, reliable software products end-to-end, from UX to APIs and large-scale data systems.",
   address: {
     city: "Lehi",
     state: "UT",
