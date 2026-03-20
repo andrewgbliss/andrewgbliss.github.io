@@ -37,7 +37,7 @@ export const resume: ResumeOptions = {
   email: "andrewgbliss@gmail.com",
   bio: `Senior Full Stack Software Engineer`,
   tagline:
-    "Senior full-stack engineer delivering performant, reliable web products end-to-end—from UX to APIs to data.",
+    "Senior full-stack engineer delivering secure, high-performance, reliable software products end-to-end, from UX to APIs and large-scale data systems.",
   address: {
     city: "Lehi",
     state: "UT",
@@ -57,8 +57,9 @@ export const resume: ResumeOptions = {
       to: "Current",
       skills: ["React", "Typescript", "Tailwind CSS", "NodeJs", "PostgreSQL"],
       bulletpoints: [
-        "Designed and implemented front-end architecture and user-facing features using React, TypeScript, and Next.js, improving usability, performance, and user engagement.",
-        "Optimized large-scale analytics workflows, cutting BigQuery costs and saving thousands of dollars per month by implementing a hybrid BigQuery and AlloyDB / PostgreSQL solution, improving query performance and reliability.",
+        "Optimize large-scale analytics workflows, cutting BigQuery costs and saving thousands of dollars per month by implementing a hybrid BigQuery, PostgreSQL solution, improving query performance and reliability.",
+        "Design new features using React, TypeScript, Next.js, improving usability, performance, and user engagement.",
+        "Leverage the use of AI to create new products, introduce new features saving time and resources.",
       ],
     },
     {
