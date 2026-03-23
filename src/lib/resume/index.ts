@@ -1,3 +1,4 @@
+import { aiDevResume } from "./ai_dev_resume";
 import { gameDevResume } from "./game_dev_resume";
 import { mainResume } from "./main_resume";
 import type { ResumeDocument, ResumeOptions, ResumeSeo } from "./types";
@@ -13,6 +14,7 @@ export type {
 
 export const resumeDocuments: Array<ResumeDocument> = [
   mainResume,
+  aiDevResume,
   gameDevResume,
 ];
 
