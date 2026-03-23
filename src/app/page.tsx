@@ -3,7 +3,7 @@ import { Metadata, Viewport } from "next";
 import { HoverLinks } from "./_components/HoverLinks";
 
 export const viewport: Viewport = {
-  themeColor: "#000000",
+  themeColor: "#d4d4d8",
 };
 
 export const metadata: Metadata = {
@@ -38,8 +38,10 @@ export const metadata: Metadata = {
 
 export default function Page() {
   return (
-    <div className="p-5 min-h-screen w-full flex items-center justify-center bg-linear-to-br from-slate-950 via-slate-800 to-slate-950">
-      <HoverLinks />
-    </div>
+    <main className="min-h-screen w-full bg-zinc-300">
+      <div className="mx-auto min-h-screen max-w-3xl border-x border-zinc-300 bg-white shadow-[0_1px_3px_rgba(0,0,0,0.06)]">
+        <HoverLinks />
+      </div>
+    </main>
   );
 }

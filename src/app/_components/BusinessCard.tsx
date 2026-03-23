@@ -1,6 +1,6 @@
 "use client";
 
-import { resume } from "@/lib/resume";
+import { defaultResumeHref, resume } from "@/lib/resume";
 import { website } from "@/lib/website";
 import { Card } from "@/components/ui/card";
 import { motion } from "framer-motion";
@@ -19,7 +19,7 @@ export function BusinessCard() {
         <div className="flex flex-col sm:flex-row gap-6">
           <div className="flex-shrink-0">
             <img
-              src={`andy.jpg`}
+              src="/andy.jpg"
               alt={resume.name}
               className="rounded h-96 w-full sm:h-48 object-cover object-top sm:w-48"
             />
@@ -28,7 +28,7 @@ export function BusinessCard() {
             <h1 className="text-3xl font-bold mb-2">{resume.name}</h1>
             <p className="text-lg text-muted-foreground mb-4">{resume.bio}</p>
             <div className="flex flex-row gap-2">
-              <Link href="/resume" className="text-primary hover:underline">
+              <Link href={defaultResumeHref} className="text-primary hover:underline">
                 Resume
               </Link>
               <Link

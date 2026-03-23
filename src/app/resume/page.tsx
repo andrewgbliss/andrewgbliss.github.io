@@ -1,51 +1,20 @@
-import { website } from "@/lib/website";
-import { Metadata } from "next";
-import { Resume } from "../_components/Resume";
-import { ThemeProvider } from "@/components/theme-provider";
+"use client";
 
-export const metadata: Metadata = {
-  title: `${website.name} - Resume`,
-  description: `${website.name} - Resume`,
-  icons: {
-    icon: "favicon.ico",
-  },
-  openGraph: {
-    title: website.name,
-    description: website.description,
-    images: [
-      {
-        url: "andy.jpg",
-      },
-    ],
-    type: "website",
-    url: `${website.url}/resume`,
-    siteName: website.name,
-  },
-  twitter: {
-    card: "summary_large_image",
-    title: website.name,
-    description: website.description,
-    images: ["andy.jpg"],
-  },
-  robots: {
-    index: true,
-    follow: true,
-  },
-};
+import { DEFAULT_RESUME_ID } from "@/lib/resume";
+import { useRouter } from "next/navigation";
+import { useEffect } from "react";
 
-export default function Page() {
+/** Static export–friendly redirect to the default resume id. */
+export default function ResumeIndexPage() {
+  const router = useRouter();
+
+  useEffect(() => {
+    router.replace(`/resume/${DEFAULT_RESUME_ID}`);
+  }, [router]);
+
   return (
-    <ThemeProvider
-      attribute="class"
-      defaultTheme="system"
-      enableSystem
-      disableTransitionOnChange
-    >
-      <div className="p-5 min-h-screen flex items-center justify-center bg-linear-to-br from-slate-900 via-slate-700 to-slate-900">
-        <div className="container mx-auto">
-          <Resume />
-        </div>
-      </div>
-    </ThemeProvider>
+    <main className="flex min-h-screen items-center justify-center bg-zinc-300 text-zinc-600">
+      <p className="text-sm">Loading resume…</p>
+    </main>
   );
 }
