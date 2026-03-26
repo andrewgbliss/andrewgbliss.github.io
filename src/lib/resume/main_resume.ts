@@ -6,14 +6,14 @@ export const mainResume: ResumeDocument = {
   seo: {
     title: "Andrew Bliss — Resume",
     description:
-      "Senior full-stack software engineer: React, TypeScript, Next.js, Node, PostgreSQL, and data systems.",
+      "Senior full stack engineer delivering secure, performant, reliable software products.",
   },
   pdfFilename: "/Resume.pdf",
   name: "Andrew Bliss",
   email: "andrewgbliss@gmail.com",
   bio: `Senior Full Stack Software Engineer`,
   tagline:
-    "Senior AI full-stack engineer delivering secure, high-performance, reliable software products end-to-end, from UX to APIs and large-scale data systems.",
+    "Senior full stack engineer delivering secure, performant, reliable software products.",
   address: {
     city: "Lehi",
     state: "UT",
@@ -33,9 +33,8 @@ export const mainResume: ResumeDocument = {
       to: "Current",
       skills: ["React", "Typescript", "Tailwind CSS", "NodeJs", "PostgreSQL"],
       bulletpoints: [
-        "Optimize large-scale analytics workflows, cutting BigQuery costs and saving thousands of dollars per month by implementing a hybrid BigQuery, PostgreSQL solution, improving query performance and reliability.",
+        "Work with BigQuery and PostgreSQL implementing aggregation, improving query performance and reliability cutting costs and saving thousands of dollars per month.",
         "Design new features using React, TypeScript, Next.js, improving usability, performance, and user engagement.",
-        "Leverage the use of AI to create new products, introduce new features saving time and resources.",
       ],
     },
     {
@@ -46,8 +45,8 @@ export const mainResume: ResumeDocument = {
       to: "Sep, 2022",
       skills: ["React", "Typescript", "Tailwind CSS", "NodeJs", "PostgreSQL"],
       bulletpoints: [
-        "Modernized legacy PHP applications by migrating to a Next.js-based stack, cutting compute costs and saving thousands of dollars per month.",
-        "Built customer-facing proposal software for solar companies, significantly increasing client revenue through faster sales cycles and improved conversion.",
+        "Modernized legacy PHP applications by migrating to a Next.js stack, cutting compute costs and improving performance and developer velocity.",
+        "Built solar software for solar companies using React, Typescript, Next.js, significantly increasing client revenue through faster sales cycles and improved conversion.",
       ],
     },
   ],
