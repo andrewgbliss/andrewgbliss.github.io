@@ -25,6 +25,8 @@ export type ResumeOptions = {
   email: string;
   bio: string;
   tagline: string;
+  /** Longer first-person copy for landing pages; optional per resume variant. */
+  aboutParagraphs?: Array<string>;
   address: Address;
   education: Education;
   workExperience: Array<WorkExperience>;

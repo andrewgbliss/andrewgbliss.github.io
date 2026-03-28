@@ -1,122 +1,90 @@
-"use client";
-
-import { motion } from "framer-motion";
 import Link from "next/link";
+import { ArrowLeft, ExternalLink } from "lucide-react";
+
+const backLinkClass =
+  "inline-flex min-h-11 items-center justify-center gap-2 border border-zinc-300 bg-white px-4 py-2.5 text-sm font-medium text-zinc-900 transition-colors hover:border-zinc-400 hover:bg-zinc-50 active:bg-zinc-100 sm:min-h-0 sm:px-5 sm:py-3";
 
 const projects = [
   {
-    title: "BlissCode",
-    description: "Business site for web development and design services.",
-    image: "portfolio-blisscodedev.png",
-    url: "https://www.blisscode.dev",
-  },
-  {
-    title: "Blog",
-    description: "Personal blog for thoughts and ideas.",
-    image: "portfolio-blisscode-articles.png",
-    url: "https://www.blisscode.dev/articles",
-  },
-  {
-    title: "Diluted Science",
-    description: "Music website for local artists.",
-    image: "portfolio-diluted-science.png",
-    url: "https://dilutedscience.com",
-  },
-  {
-    title: "Abybyo",
-    description:
-      "Language learning app for adults with little to no time to learn.",
-    image: "portfolio-abybyo.png",
-    url: "https://abybyo.com",
-  },
-  {
-    title: "Zero Fall Studios",
-    description: "Game development studio website.",
-    image: "portfolio-zerofall.png",
-    url: "https://www.zerofallstudios.com",
-  },
-  {
-    title: "Music Profile",
-    description: "Music profile page for Andy B Mixin.",
-    image: "portfolio-music-page.png",
-    url: "https://www.dilutedscience.com/artists/andy-b-mixin",
-  },
-  {
-    title: "Scheduler",
-    description: "Scheduler for website consulting.",
-    image: "portfolio-scheduler.png",
-    url: "https://www.blisscode.dev/schedule",
-  },
-  {
-    title: "Questionnaire",
-    description: "Questionnaire for website consulting.",
-    image: "portfolio-questionnaire.png",
-    url: "https://www.blisscode.dev/questionnaire/website-consulting",
+    title: "Andrew Bliss Github Site",
+    description: "Personal site for web development and design services.",
+    url: "https://andrewgbliss.com",
   },
 ];
 
-export default function PortfolioPage() {
-  const container = {
-    hidden: { opacity: 0 },
-    show: {
-      opacity: 1,
-      transition: {
-        staggerChildren: 0.2,
-      },
-    },
-  };
-
-  const item = {
-    hidden: { opacity: 0, y: 20 },
-    show: { opacity: 1, y: 0 },
-  };
-
+export default function Portfolio() {
   return (
-    <>
-      <motion.div variants={container} initial="hidden" animate="show">
-        <motion.h1
-          variants={item}
-          className="text-white text-4xl font-bold text-center mb-8"
+    <div className="w-full">
+      <div className="px-4 pb-12 pt-8 sm:px-10 sm:pb-16 sm:pt-10 lg:px-12">
+        <section
+          className="border-b border-zinc-200 pb-10"
+          aria-labelledby="portfolio-heading"
         >
-          My Portfolio
-        </motion.h1>
-        <motion.div
-          variants={item}
-          whileHover={{ scale: 1.05 }}
-          transition={{ type: "spring", stiffness: 400, damping: 10 }}
-        >
-          <Link href="/" className="text-white text-xl hover:underline">
-            Back
-          </Link>
-        </motion.div>
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-8 my-5">
-          {projects.map((project, index) => (
-            <motion.div
-              key={index}
-              variants={item}
-              whileHover={{ scale: 1.05 }}
-              transition={{ type: "spring", stiffness: 400, damping: 10 }}
-              className="overflow-hidden text-white hover:underline"
-            >
-              <Link
-                href={project.url}
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                <img
-                  src={project.image}
-                  alt={project.title}
-                  className="w-full h-48 object-cover object-top"
-                />
-                <div className="py-4">
-                  <h3 className="text-2xl font-bold mb-2">{project.title}</h3>
-                  <p>{project.description}</p>
-                </div>
-              </Link>
-            </motion.div>
-          ))}
-        </div>
-      </motion.div>
-    </>
+          <p className="text-xs font-medium uppercase tracking-widest text-zinc-500">
+            Work
+          </p>
+          <h1
+            id="portfolio-heading"
+            className="mt-3 text-[1.75rem] font-semibold leading-[1.15] tracking-tight text-zinc-950 sm:text-4xl sm:leading-[1.1]"
+          >
+            Portfolio
+          </h1>
+          <p className="mt-4 max-w-prose text-sm leading-relaxed text-zinc-600 sm:text-base">
+            A selection of sites and products I have designed and built—client
+            work, personal projects, and tools that ship on the web.
+          </p>
+          <nav className="mt-8" aria-label="Back to home">
+            <Link href="/" className={backLinkClass}>
+              <ArrowLeft
+                size={18}
+                className="shrink-0 opacity-90"
+                aria-hidden
+              />
+              Back to home
+            </Link>
+          </nav>
+        </section>
+
+        <section className="py-10" aria-labelledby="projects-heading">
+          <h2
+            id="projects-heading"
+            className="text-xs font-medium uppercase tracking-widest text-zinc-500"
+          >
+            Selected projects
+          </h2>
+          <ul className="mt-6 grid list-none grid-cols-1 gap-5 sm:grid-cols-2">
+            {projects.map((project) => (
+              <li key={project.url}>
+                <Link
+                  href={project.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="group block overflow-hidden rounded-lg border border-zinc-200 bg-white shadow-sm transition-[border-color,box-shadow] hover:border-zinc-300 hover:shadow-[0_1px_3px_rgba(0,0,0,0.06)]"
+                >
+                  <div className="px-5 py-4 sm:px-6 sm:py-5">
+                    <div className="flex items-start justify-between gap-3">
+                      <h3 className="text-base font-semibold leading-snug text-zinc-950 sm:text-lg">
+                        {project.title}
+                      </h3>
+                      <ExternalLink
+                        size={18}
+                        className="mt-0.5 shrink-0 text-zinc-400 transition-colors group-hover:text-zinc-600"
+                        aria-hidden
+                      />
+                    </div>
+                    <p className="mt-2 text-sm leading-relaxed text-zinc-600 sm:text-base">
+                      {project.description}
+                    </p>
+                    <p className="mt-4 text-sm font-medium text-zinc-900 underline-offset-4 group-hover:underline">
+                      Visit site
+                    </p>
+                  </div>
+                </Link>
+              </li>
+            ))}
+          </ul>
+        </section>
+      </div>
+    </div>
   );
 }

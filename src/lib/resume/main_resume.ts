@@ -14,6 +14,11 @@ export const mainResume: ResumeDocument = {
   bio: `Senior Full Stack Software Engineer`,
   tagline:
     "Senior full stack engineer delivering secure, performant, reliable software products.",
+  aboutParagraphs: [
+    "I'm a senior full-stack engineer based in Lehi, Utah, with a B.S. in Computer Science from Stevens-Henager College. Most of my recent work spans React, TypeScript, Next.js, Node, and PostgreSQL—alongside data systems like BigQuery—where I focus on performance, reliability, and features people actually use every day.",
+    "Earlier in my career I spent years consulting: migrating legacy PHP applications to a modern Next.js stack, improving cost and velocity, and building solar-industry software in React and TypeScript that helped clients shorten sales cycles and grow revenue. I'm happiest when engineering decisions show up as clearer UX, stable releases, and measurable savings.",
+    "This site is my home on the web for professional work and personal projects—software, audio, and other creative experiments—with links to my resume, portfolio, and repos.",
+  ],
   address: {
     city: "Lehi",
     state: "UT",
