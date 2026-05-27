@@ -1,13 +1,5 @@
 import Link from "next/link";
-import {
-  Briefcase,
-  FileText,
-  Github,
-  LayoutDashboard,
-  Linkedin,
-  Mail,
-  MapPin,
-} from "lucide-react";
+import { Briefcase, FileText, Mail, MapPin } from "lucide-react";
 import { defaultResumeHref, resume } from "@/lib/resume";
 import { website } from "@/lib/website";
 
@@ -23,20 +15,20 @@ type SiteLink = {
 const siteLinks: Array<SiteLink> = [
   {
     href: "/site-components",
-    label: "Components",
+    label: "Portfolio",
     icon: Briefcase,
     variant: "primary",
   },
   {
     href: "https://github.com/andrewgbliss",
     label: "GitHub",
-    icon: Github,
+    icon: Briefcase,
     variant: "outline",
   },
   {
     href: "https://www.linkedin.com/in/andrewgbliss/",
     label: "LinkedIn",
-    icon: Linkedin,
+    icon: Briefcase,
     variant: "outline",
   },
 ];
@@ -64,16 +56,13 @@ export function HoverLinks() {
         <img
           src="/andy.jpg"
           alt=""
-          className="aspect-[5/4] max-h-[min(40vh,16rem)] w-full object-cover object-[center_20%] sm:aspect-21/9 sm:max-h-[min(52vh,22rem)] sm:object-[center_15%]"
+          className="aspect-5/4 max-h-[min(40vh,16rem)] w-full object-cover object-[center_20%] sm:aspect-21/9 sm:max-h-[min(52vh,22rem)] sm:object-[center_15%]"
         />
       </div>
 
       <div className="px-4 pb-12 pt-8 sm:px-10 sm:pb-16 sm:pt-10 lg:px-12">
         {/* Introduction */}
-        <section
-          className="border-b border-zinc-200 pb-10"
-          aria-labelledby="intro-heading"
-        >
+        <section aria-labelledby="intro-heading">
           <p className="text-xs font-medium uppercase tracking-widest text-zinc-500">
             Introduction
           </p>
@@ -89,91 +78,6 @@ export function HoverLinks() {
           <p className="mt-4 max-w-prose text-sm leading-relaxed text-zinc-600 sm:text-base">
             {resume.tagline}
           </p>
-          {resume.aboutParagraphs && resume.aboutParagraphs.length > 0 && (
-            <div className="mt-6 space-y-4 max-w-prose">
-              <p className="text-xs font-medium uppercase tracking-widest text-zinc-500">
-                About me
-              </p>
-              {resume.aboutParagraphs.map((paragraph, index) => (
-                <p
-                  key={index}
-                  className="text-sm leading-relaxed text-zinc-600 sm:text-base"
-                >
-                  {paragraph}
-                </p>
-              ))}
-            </div>
-          )}
-          <p className="mt-6 text-sm text-zinc-500">
-            <a
-              href={website.url}
-              className="underline-offset-4 hover:text-zinc-700 hover:underline"
-            >
-              {website.url.replace(/^https?:\/\//, "")}
-            </a>
-            <span className="text-zinc-400"> · </span>
-            {website.description}
-          </p>
-        </section>
-
-        {/* Site links */}
-        <section
-          className="border-b border-zinc-200 py-10"
-          aria-labelledby="links-heading"
-        >
-          <h2
-            id="links-heading"
-            className="text-xs font-medium uppercase tracking-widest text-zinc-500"
-          >
-            On this site
-          </h2>
-          <nav
-            className="mt-4 flex flex-wrap gap-2 sm:gap-3"
-            aria-label="Main navigation"
-          >
-            {siteLinks.map(({ href, label, icon: Icon, variant }) => (
-              <Link key={href} href={href} className={linkButtonClass[variant]}>
-                <Icon size={18} className="shrink-0 opacity-90" aria-hidden />
-                {label}
-              </Link>
-            ))}
-          </nav>
-        </section>
-
-        {/* Blog (default post) */}
-        <section
-          className="border-b border-zinc-200 py-10"
-          aria-labelledby="blog-heading"
-        >
-          <h2
-            id="blog-heading"
-            className="text-xs font-medium uppercase tracking-widest text-zinc-500"
-          >
-            Blog
-          </h2>
-          <article className="mt-4 max-w-prose rounded-lg border border-zinc-200 bg-white px-5 py-5 sm:px-6 sm:py-6">
-            <header>
-              <h3 className="text-base font-semibold leading-snug text-zinc-950 sm:text-lg">
-                {defaultBlogPost.title}
-              </h3>
-              <p className="mt-1.5 text-sm text-zinc-500">
-                <time dateTime={defaultBlogPost.dateIso}>
-                  {defaultBlogPost.dateLabel}
-                </time>
-              </p>
-            </header>
-            <p className="mt-4 text-sm leading-relaxed text-zinc-600 sm:text-base">
-              {defaultBlogPost.body}
-            </p>
-            <p className="mt-4 text-sm">
-              <a
-                href={defaultBlogPost.repoHref}
-                className="font-medium text-zinc-900 underline-offset-4 hover:underline"
-              >
-                View source on GitHub
-              </a>
-            </p>
-          </article>
         </section>
 
         {/* Business card */}
@@ -239,6 +143,66 @@ export function HoverLinks() {
               </div>
             </div>
           </div>
+        </section>
+
+        {/* Blog (default post) */}
+        <section
+          className="border-b border-zinc-200 py-10"
+          aria-labelledby="blog-heading"
+        >
+          <h2
+            id="blog-heading"
+            className="text-xs font-medium uppercase tracking-widest text-zinc-500"
+          >
+            Blog
+          </h2>
+          <article className="mt-4 max-w-prose rounded-lg border border-zinc-200 bg-white px-5 py-5 sm:px-6 sm:py-6">
+            <header>
+              <h3 className="text-base font-semibold leading-snug text-zinc-950 sm:text-lg">
+                {defaultBlogPost.title}
+              </h3>
+              <p className="mt-1.5 text-sm text-zinc-500">
+                <time dateTime={defaultBlogPost.dateIso}>
+                  {defaultBlogPost.dateLabel}
+                </time>
+              </p>
+            </header>
+            <p className="mt-4 text-sm leading-relaxed text-zinc-600 sm:text-base">
+              {defaultBlogPost.body}
+            </p>
+            <p className="mt-4 text-sm">
+              <a
+                href={defaultBlogPost.repoHref}
+                className="font-medium text-zinc-900 underline-offset-4 hover:underline"
+              >
+                View source on GitHub
+              </a>
+            </p>
+          </article>
+        </section>
+
+        {/* Site links */}
+        <section
+          className="border-b border-zinc-200 py-10"
+          aria-labelledby="links-heading"
+        >
+          <h2
+            id="links-heading"
+            className="text-xs font-medium uppercase tracking-widest text-zinc-500"
+          >
+            On this site
+          </h2>
+          <nav
+            className="mt-4 flex flex-wrap gap-2 sm:gap-3"
+            aria-label="Main navigation"
+          >
+            {siteLinks.map(({ href, label, icon: Icon, variant }) => (
+              <Link key={href} href={href} className={linkButtonClass[variant]}>
+                <Icon size={18} className="shrink-0 opacity-90" aria-hidden />
+                {label}
+              </Link>
+            ))}
+          </nav>
         </section>
       </div>
     </div>

@@ -11,10 +11,8 @@ import {
   FileText,
   ArrowLeft,
 } from "lucide-react";
-import { Facebook, Twitter } from "lucide-react";
 import { website } from "@/lib/website";
 import { QRCodeSVG } from "qrcode.react";
-import { BskyIcon } from "@/app/_components/BskyIcon";
 import Link from "next/link";
 
 const primaryNavBtn =
@@ -32,7 +30,7 @@ function SkillPill({ children }: { children: ReactNode }) {
 }
 
 export function Resume({ document }: { document: ResumeDocument }) {
-  const pdfName = document.pdfFilename ?? "Resume.pdf";
+  const pdfName = document.pdfFilename ?? "BlissAndrew_Resume.pdf";
   const resumePageUrl = `${website.url}/resume/${document.id}`;
 
   return (
@@ -50,7 +48,7 @@ export function Resume({ document }: { document: ResumeDocument }) {
           <div className="flex flex-col gap-6 sm:flex-row sm:items-start sm:justify-between sm:gap-6">
             <header className="min-w-0 w-full text-left sm:max-w-2xl sm:flex-1 sm:pr-4">
               <h1 className="text-[1.75rem] font-semibold leading-[1.15] tracking-tight text-zinc-950 sm:text-4xl sm:leading-[1.1]">
-                {document.name}
+                <a href="/">{document.name}</a>
               </h1>
               <p className="mt-2.5 max-w-prose font-mono text-sm leading-relaxed text-zinc-500 sm:mt-3.5 sm:text-base">
                 {document.bio}
@@ -68,34 +66,8 @@ export function Resume({ document }: { document: ResumeDocument }) {
                 </div>
               </div>
             </header>
-
-            <nav
-              className="flex w-full shrink-0 flex-row gap-2 sm:w-auto sm:flex-wrap sm:justify-end sm:gap-3"
-              aria-label="Resume actions"
-            >
-              <button
-                type="button"
-                className={primaryNavBtn}
-                onClick={() => window.open(pdfName, "_blank")}
-              >
-                <FileText size={18} className="shrink-0 opacity-80" aria-hidden />
-                Download PDF
-              </button>
-              <Link href="/" className={outlineNavBtn}>
-                <ArrowLeft
-                  size={18}
-                  className="shrink-0 text-zinc-500"
-                  aria-hidden
-                />
-                Home
-              </Link>
-            </nav>
           </div>
-
-          <section
-            className="border-t border-zinc-200 pt-8"
-            aria-labelledby="summary-heading"
-          >
+          <section className="" aria-labelledby="summary-heading">
             <h2
               id="summary-heading"
               className="text-lg font-semibold tracking-tight text-zinc-950"
@@ -107,16 +79,27 @@ export function Resume({ document }: { document: ResumeDocument }) {
             </p>
           </section>
 
+          <div>
+            <h3 className="text-xs font-medium uppercase tracking-wide text-zinc-500">
+              Skills
+            </h3>
+            <div className="mt-3 flex flex-wrap gap-2">
+              {document.skills.map((skill) => (
+                <SkillPill key={skill}>{skill}</SkillPill>
+              ))}
+            </div>
+          </div>
+
           <section aria-labelledby="experience-heading">
             <h2
               id="experience-heading"
               className="text-lg font-semibold tracking-tight text-zinc-950"
             >
-              Experience
+              Work History
             </h2>
-            <ul className="m-0 mt-6 list-none divide-y divide-zinc-200 p-0 sm:mt-8">
+            <ul className="m-0 list-none divide-y divide-zinc-200 p-0">
               {document.workExperience.map((work, i) => (
-                <li key={i} className="min-w-0 py-7 sm:py-10">
+                <li key={i} className="min-w-0 py-7 sm:py-7">
                   <div className="flex flex-col justify-between gap-1 sm:flex-row sm:items-baseline">
                     <h3 className="text-base font-semibold text-zinc-950">
                       {work.title} / {work.company}
@@ -151,10 +134,7 @@ export function Resume({ document }: { document: ResumeDocument }) {
             </ul>
           </section>
 
-          <section
-            className="border-t border-zinc-200 pt-10"
-            aria-labelledby="education-heading"
-          >
+          <section aria-labelledby="education-heading">
             <div className="flex flex-col gap-10 lg:flex-row lg:items-start lg:justify-between">
               <div className="min-w-0 flex-1 space-y-8">
                 <div>
@@ -203,55 +183,6 @@ export function Resume({ document }: { document: ResumeDocument }) {
                     ))}
                   </ul>
                 </div>
-
-                <div>
-                  <h3 className="text-xs font-medium uppercase tracking-wide text-zinc-500">
-                    Skills
-                  </h3>
-                  <div className="mt-3 flex flex-wrap gap-2">
-                    {document.skills.map((skill) => (
-                      <SkillPill key={skill}>{skill}</SkillPill>
-                    ))}
-                  </div>
-                </div>
-
-                <div>
-                  <h3 className="text-xs font-medium uppercase tracking-wide text-zinc-500">
-                    Share
-                  </h3>
-                  <div className="mt-3 flex gap-4">
-                    <a
-                      href={`https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(resumePageUrl)}`}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="text-zinc-400 transition-colors hover:text-zinc-600"
-                      aria-label="Share on Facebook"
-                    >
-                      <Facebook size={22} />
-                    </a>
-                    <a
-                      href={`https://twitter.com/intent/tweet?url=${encodeURIComponent(resumePageUrl)}&text=${encodeURIComponent(`Check out ${document.name}'s resume`)}`}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="text-zinc-400 transition-colors hover:text-zinc-600"
-                      aria-label="Share on X"
-                    >
-                      <Twitter size={22} />
-                    </a>
-                    <a
-                      href={`https://bsky.app/intent/compose?text=${encodeURIComponent(
-                        `${document.name} — ${resumePageUrl}`,
-                      )}`}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="text-zinc-400 transition-colors hover:text-zinc-600"
-                      title="Share on Bluesky"
-                      aria-label="Share on Bluesky"
-                    >
-                      <BskyIcon height={22} />
-                    </a>
-                  </div>
-                </div>
               </div>
 
               <div className="flex shrink-0 justify-center lg:w-40 lg:justify-end">
@@ -262,35 +193,27 @@ export function Resume({ document }: { document: ResumeDocument }) {
             </div>
           </section>
 
-          <footer
-            className="border-t border-zinc-200 pt-10"
-            aria-label="Other resume versions"
+          <nav
+            className="flex w-full shrink-0 flex-row gap-2 sm:w-auto sm:flex-wrap sm:justify-center sm:gap-3"
+            aria-label="Resume actions"
           >
-            <h2 className="text-xs font-medium uppercase tracking-wide text-zinc-500">
-              Resumes
-            </h2>
-            <ul className="mt-3 flex flex-wrap gap-2 sm:gap-3">
-              {resumeDocuments.map((doc) => {
-                const isCurrent = doc.id === document.id;
-                return (
-                  <li key={doc.id}>
-                    {isCurrent ? (
-                      <span className="inline-flex items-center rounded-full border border-zinc-900 bg-zinc-900 px-3 py-1.5 text-sm font-medium text-white">
-                        {doc.navLabel}
-                      </span>
-                    ) : (
-                      <Link
-                        href={`/resume/${doc.id}`}
-                        className="inline-flex items-center rounded-full border border-zinc-200 bg-white px-3 py-1.5 text-sm font-medium text-zinc-700 transition-colors hover:border-zinc-400 hover:bg-zinc-50 hover:text-zinc-950"
-                      >
-                        {doc.navLabel}
-                      </Link>
-                    )}
-                  </li>
-                );
-              })}
-            </ul>
-          </footer>
+            <button
+              type="button"
+              className={primaryNavBtn}
+              onClick={() => window.open(pdfName, "_blank")}
+            >
+              <FileText size={18} className="shrink-0 opacity-80" aria-hidden />
+              Download PDF
+            </button>
+            <Link href="/" className={outlineNavBtn}>
+              <ArrowLeft
+                size={18}
+                className="shrink-0 text-zinc-500"
+                aria-hidden
+              />
+              Home
+            </Link>
+          </nav>
         </div>
       </div>
 

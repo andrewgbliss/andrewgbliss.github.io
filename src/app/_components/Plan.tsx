@@ -1,8 +1,5 @@
-import Link from "next/link";
-import { FileText, Linkedin } from "lucide-react";
 import { FrontPageGameCard } from "./FrontPageGameCard";
 import { frontPageCards } from "@/lib/front_page_cards";
-import { defaultResumeHref } from "@/lib/resume";
 import { website } from "@/lib/website";
 
 function slugToLabel(slug: string) {
