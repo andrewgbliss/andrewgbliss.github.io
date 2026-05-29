@@ -1,6 +1,6 @@
 import { website } from "@/lib/website";
 import { Metadata, Viewport } from "next";
-import { Plan } from "../_components/Plan";
+import { Plan } from "../../_components/Plan";
 
 export const viewport: Viewport = {
   themeColor: "#d4d4d8",

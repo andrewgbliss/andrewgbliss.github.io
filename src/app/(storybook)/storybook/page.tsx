@@ -10,6 +10,8 @@ import {
   MailCheck,
   PartyPopper,
   UserPlus,
+  List,
+  Plus,
 } from "lucide-react";
 import { Metadata, Viewport } from "next";
 import { defaultResumeHref } from "@/lib/resume";
@@ -105,6 +107,21 @@ const mainPages: Array<ShowcaseCard> = [
   },
 ];
 
+const testPages: Array<ShowcaseCard> = [
+  {
+    href: "/counter",
+    label: "React Counter",
+    description: "Basic button click react state counter",
+    icon: Plus,
+  },
+  {
+    href: "/todos",
+    label: "React Todos",
+    description: "Basic todos app",
+    icon: List,
+  },
+];
+
 function Section({
   title,
   children,
@@ -162,10 +179,10 @@ export default function SiteComponentsPage() {
             Back to home
           </Link>
           <h1 className="text-2xl font-semibold tracking-tight text-zinc-900 sm:text-3xl">
-            Site Components
+            Story Book
           </h1>
           <p className="mt-2 max-w-xl text-sm text-zinc-600">
-            Quick links to authentication screens and main pages on this site.
+            Links to all pages, apps, and testing
           </p>
         </header>
 
@@ -178,6 +195,12 @@ export default function SiteComponentsPage() {
 
           <Section title="Site">
             {mainPages.map((item) => (
+              <ShowcaseLink key={`${item.href}-${item.label}`} item={item} />
+            ))}
+          </Section>
+
+          <Section title="Testing">
+            {testPages.map((item) => (
               <ShowcaseLink key={`${item.href}-${item.label}`} item={item} />
             ))}
           </Section>

@@ -38,8 +38,8 @@ export const metadata: Metadata = {
 
 export default function Page() {
   return (
-    <main className="min-h-screen w-full bg-zinc-300">
-      <div className="mx-auto min-h-screen max-w-3xl border-x border-zinc-300 bg-white shadow-[0_1px_3px_rgba(0,0,0,0.06)]">
+    <main className="min-h-screen w-full bg-linear-to-t from-zinc-500 to-zinc-800 md:py-10">
+      <div className="mx-auto min-h-screen max-w-4xl border-x md:rounded-2xl border-zinc-300 bg-zinc-100">
         <HoverLinks />
       </div>
     </main>
