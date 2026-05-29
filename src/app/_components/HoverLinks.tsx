@@ -57,7 +57,10 @@ export function HoverLinks() {
   return (
     <div className="w-full">
       <div className="px-4 pb-12 pt-8 sm:px-10 sm:pb-16 sm:pt-10 lg:px-12">
-        <section aria-labelledby="intro-heading" className="flex gap-10">
+        <section
+          aria-labelledby="intro-heading"
+          className="flex gap-4 sm:flex-row flex-col"
+        >
           <div>
             <img
               src="/andy.jpg"
@@ -68,7 +71,7 @@ export function HoverLinks() {
           <div>
             <h1
               id="intro-heading"
-              className="mt-3 text-[1.75rem] font-semibold leading-[1.15] tracking-tight text-zinc-950 sm:text-4xl sm:leading-[1.1]"
+              className="sm:mt-3 text-[1.75rem] font-semibold leading-[1.15] tracking-tight text-zinc-950 sm:text-4xl sm:leading-[1.1]"
             >
               {website.name}
             </h1>
