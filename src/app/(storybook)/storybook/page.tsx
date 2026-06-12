@@ -109,6 +109,12 @@ const mainPages: Array<ShowcaseCard> = [
 
 const testPages: Array<ShowcaseCard> = [
   {
+    href: "/theme",
+    label: "Tailwind Theme",
+    description: "View the color scheme of the tailwind theme",
+    icon: Plus,
+  },
+  {
     href: "/counter",
     label: "React Counter",
     description: "Basic button click react state counter",
