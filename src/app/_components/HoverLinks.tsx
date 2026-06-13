@@ -101,10 +101,10 @@ export function HoverLinks() {
         <div className="bg-[url('/pexels-danny-meneses-340146-943096.jpg')] bg-cover bg-center h-screen">
           <div className="flex sm:flex-row flex-col gap-5 py-10 max-w-4xl px-5 ">
             <div className="text-white gap-5 flex flex-col">
-              <h3 className="text-4xl">Welcome,</h3>
+              <h3 className="text-4xl">Welcome Wanderer,</h3>
               <p className="text-xl">
-                You have stumbled onto my professional website. Dreams of
-                conduct of code.
+                You have stumbled onto a developers professional website. Look
+                below for portfolio and contact info.
               </p>
               <p className="text-lg">
                 <Button className="text-lg" size={"xl"} onClick={handleScroll}>
@@ -115,6 +115,9 @@ export function HoverLinks() {
           </div>
         </div>
         <div ref={targetRef} className="">
+          <div className="text-center pt-10">
+            <h2 className="text-5xl">Portfolio</h2>
+          </div>
           <div className="flex flex-col items-center py-10 gap-10">
             <div className="flex sm:flex-row flex-col gap-5 items-center py-10">
               <img
@@ -136,7 +139,30 @@ export function HoverLinks() {
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-5 p-5">
               <Card>
                 <CardHeader>
-                  <a href="https://andrewgbliss.itch.io/godot-weather">
+                  <a href="/zero-fall">
+                    <img
+                      src="/screenshots/zero-fall.png"
+                      className="rounded-xl w-full"
+                    />
+                  </a>
+                </CardHeader>
+                <CardContent>
+                  <div className="">
+                    <a href="/zero-fall">
+                      <h3 className="text-2xl pb-2">Zero Fall Studios</h3>
+                    </a>
+                    <p>
+                      Game studio with experienced developers ready to turn your
+                      ideas into reality. Zero Fall Studios has many title like
+                      Junkyard Quest, and Fall Quest: The Last Corruption.
+                    </p>
+                  </div>
+                </CardContent>
+                <CardFooter></CardFooter>
+              </Card>
+              <Card>
+                <CardHeader>
+                  <a href="https://tipodd.itch.io/godot-weather">
                     <img
                       src="https://img.itch.zone/aW1nLzI2OTk5Njc2LnBuZw==/315x250%23c/TKN80F.png"
                       className="rounded-xl w-full"
@@ -145,7 +171,7 @@ export function HoverLinks() {
                 </CardHeader>
                 <CardContent>
                   <div className="">
-                    <a href="https://andrewgbliss.itch.io/godot-weather">
+                    <a href="https://tipodd.itch.io/godot-weather">
                       <h3 className="text-2xl pb-2">Godot Weather</h3>
                     </a>
                     <p>
@@ -159,7 +185,7 @@ export function HoverLinks() {
               </Card>
               <Card>
                 <CardHeader>
-                  <a href="https://andrewgbliss.itch.io/pixel-ui">
+                  <a href="https://tipodd.itch.io/pixel-ui">
                     <img
                       src="https://img.itch.zone/aW1nLzI2OTE5Mzg0LnBuZw==/315x250%23c/BxVVZ9.png"
                       className="rounded-xl  w-full"
@@ -168,7 +194,7 @@ export function HoverLinks() {
                 </CardHeader>
                 <CardContent>
                   <div className="">
-                    <a href="https://andrewgbliss.itch.io/pixel-ui">
+                    <a href="https://tipodd.itch.io/pixel-ui">
                       <h3 className="text-2xl pb-2">UI Asset Packs</h3>
                     </a>
                     <p>

@@ -68,7 +68,7 @@ export const aiDevResume: ResumeDocument = {
   links: [
     "https://andrewgbliss.github.io",
     "https://www.linkedin.com/in/andrewgbliss/",
-    "https://andrewgbliss.itch.io",
+    "https://tipodd.itch.io",
     "https://github.com/andrewgbliss",
   ],
   skills: [
