@@ -12,6 +12,8 @@ import {
 } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { useRef } from "react";
+import { TypingWords } from "./TypingWords";
+import { motion, useInView } from "motion/react";
 
 type SiteLink = {
   href: string;
@@ -95,152 +97,204 @@ export function HoverLinks() {
       targetRef3.current.scrollIntoView({ behavior: "smooth" });
     }
   };
+
+  const ref = useRef(null);
+  const isInView = useInView(ref, { once: true, margin: "0px 0px -100px 0px" });
   return (
     <div ref={targetRef3} className="w-full pb-10">
       <div className="flex flex-col gap-5">
         <div className="bg-[url('/pexels-danny-meneses-340146-943096.jpg')] bg-cover bg-center h-screen">
           <div className="flex sm:flex-row flex-col gap-5 py-10 max-w-4xl px-5 ">
             <div className="text-white gap-5 flex flex-col">
-              <h3 className="text-4xl">Welcome Wanderer,</h3>
-              <p className="text-xl">
-                You have stumbled onto a developers professional website. Look
-                below for portfolio and contact info.
-              </p>
-              <p className="text-lg">
+              <motion.h3
+                className="text-4xl"
+                initial={{ opacity: 0, y: 24 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, ease: "easeOut" }}
+              >
+                Welcome Wanderer,
+              </motion.h3>
+              <motion.div
+                initial={{ opacity: 0, y: 24 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, ease: "easeOut", delay: 0.5 }}
+              >
+                <TypingWords
+                  className="text-xl"
+                  startNow
+                  text="You have stumbled onto a developers professional website. Look below for portfolio and contact info."
+                />
+              </motion.div>
+              <motion.p
+                className="text-4xl"
+                initial={{ opacity: 0, y: 24 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, ease: "easeOut", delay: 3 }}
+              >
                 <Button className="text-lg" size={"xl"} onClick={handleScroll}>
                   Click here to start 👉
                 </Button>
-              </p>
+              </motion.p>
             </div>
           </div>
         </div>
         <div ref={targetRef} className="">
           <div className="text-center pt-10">
-            <h2 className="text-5xl">Portfolio</h2>
+            <motion.h2
+              ref={ref}
+              className="text-5xl"
+              initial={{ opacity: 0, y: 24 }}
+              animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 24 }}
+              transition={{ duration: 0.6, ease: "easeOut" }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, margin: "0px 0px -100px 0px" }}
+            >
+              Portfolio
+            </motion.h2>
           </div>
           <div className="flex flex-col items-center py-10 gap-10">
-            <div className="flex sm:flex-row flex-col gap-5 items-center py-10">
-              <img
-                src="/hover-illustration.svg"
-                className="w-50 sm:w-100  border-2 rounded-2xl"
-              />
-              <div className="sm:w-120 flex flex-col gap-5 p-5 sm:justify-start sm:items-start justify-center items-center">
-                <p className="sm:text-4xl text-2xl">Let's work together!</p>
-                <p>
-                  Experienced Full Stack Developer. Background in web
-                  development, apps, mobile, with a track record in optimized,
-                  responsive design. You can find my contact information below.
-                </p>
-                <Button size={"xl"} onClick={handleScroll2}>
-                  Contact Info 👉
-                </Button>
-              </div>
-            </div>
-            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-5 p-5">
-              <Card>
-                <CardHeader>
-                  <a href="/zero-fall">
-                    <img
-                      src="/screenshots/zero-fall.png"
-                      className="rounded-xl w-full"
-                    />
-                  </a>
-                </CardHeader>
-                <CardContent>
-                  <div className="">
-                    <a href="/zero-fall">
-                      <h3 className="text-2xl pb-2">Zero Fall Studios</h3>
-                    </a>
-                    <p>
-                      Game studio with experienced developers ready to turn your
-                      ideas into reality. Zero Fall Studios has many title like
-                      Junkyard Quest, and Fall Quest: The Last Corruption.
-                    </p>
-                  </div>
-                </CardContent>
-                <CardFooter></CardFooter>
-              </Card>
-              <Card>
-                <CardHeader>
-                  <a href="https://tipodd.itch.io/godot-weather">
-                    <img
-                      src="https://img.itch.zone/aW1nLzI2OTk5Njc2LnBuZw==/315x250%23c/TKN80F.png"
-                      className="rounded-xl w-full"
-                    />
-                  </a>
-                </CardHeader>
-                <CardContent>
-                  <div className="">
-                    <a href="https://tipodd.itch.io/godot-weather">
-                      <h3 className="text-2xl pb-2">Godot Weather</h3>
-                    </a>
-                    <p>
-                      Weather simulation for different weather types in Godot.
-                      Since it uses gpu particles it works best on an actual app
-                      rather than a web export.
-                    </p>
-                  </div>
-                </CardContent>
-                <CardFooter></CardFooter>
-              </Card>
-              <Card>
-                <CardHeader>
-                  <a href="https://tipodd.itch.io/pixel-ui">
-                    <img
-                      src="https://img.itch.zone/aW1nLzI2OTE5Mzg0LnBuZw==/315x250%23c/BxVVZ9.png"
-                      className="rounded-xl  w-full"
-                    />
-                  </a>
-                </CardHeader>
-                <CardContent>
-                  <div className="">
-                    <a href="https://tipodd.itch.io/pixel-ui">
-                      <h3 className="text-2xl pb-2">UI Asset Packs</h3>
-                    </a>
-                    <p>
-                      This pack has all in one UI images. Everything comes with
-                      the png and aseprite files.
-                    </p>
-                  </div>
-                </CardContent>
-                <CardFooter></CardFooter>
-              </Card>
-              <Card>
-                <CardHeader>
-                  <h2
-                    id="card-heading"
-                    className="text-xs font-medium uppercase tracking-widest text-zinc-500 pb-5"
-                  >
-                    Blog
-                  </h2>
-                  <h3 className="text-base font-semibold leading-snug text-zinc-950 sm:text-lg">
-                    {defaultBlogPost.title}
-                  </h3>
-                  <p className="mt-1.5 text-sm text-zinc-500">
-                    <time dateTime={defaultBlogPost.dateIso}>
-                      {defaultBlogPost.dateLabel}
-                    </time>
+            <motion.div
+              ref={ref}
+              initial={{ opacity: 0, y: 24 }}
+              animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 24 }}
+              transition={{ duration: 0.6, ease: "easeOut" }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, margin: "0px 0px -100px 0px" }}
+            >
+              <div className="flex sm:flex-row flex-col gap-5 items-center py-10">
+                <img
+                  src="/hover-illustration.svg"
+                  className="w-50 sm:w-100  border-2 rounded-2xl"
+                />
+                <div className="sm:w-120 flex flex-col gap-5 p-5 sm:justify-start sm:items-start justify-center items-center">
+                  <p className="sm:text-4xl text-2xl">Let's work together!</p>
+                  <p>
+                    Experienced Full Stack Developer. Background in web
+                    development, apps, mobile, with a track record in optimized,
+                    responsive design. You can find my contact information
+                    below.
                   </p>
-                </CardHeader>
-                <CardContent>
-                  <article className="mt-4 max-w-full rounded-lg border border-zinc-200 bg-white px-5 py-5 sm:px-6 sm:py-6">
-                    <header></header>
-                    <p className="mt-4 text-sm leading-relaxed text-zinc-600 sm:text-base">
-                      {defaultBlogPost.body}
-                    </p>
-                    <p className="mt-4 text-sm">
-                      <a
-                        href={defaultBlogPost.repoHref}
-                        className="font-medium text-zinc-900 underline-offset-4 hover:underline"
-                      >
-                        View source on GitHub
+                  <Button size={"xl"} onClick={handleScroll2}>
+                    Contact Info 👉
+                  </Button>
+                </div>
+              </div>
+            </motion.div>
+            <motion.div
+              ref={ref}
+              initial={{ opacity: 0, y: 24 }}
+              animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 24 }}
+              transition={{ duration: 0.6, ease: "easeOut" }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, margin: "0px 0px -100px 0px" }}
+            >
+              <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-5 p-5">
+                <Card>
+                  <CardHeader>
+                    <a href="/zero-fall">
+                      <img
+                        src="/screenshots/zero-fall.png"
+                        className="rounded-xl w-full"
+                      />
+                    </a>
+                  </CardHeader>
+                  <CardContent>
+                    <div className="">
+                      <a href="/zero-fall">
+                        <h3 className="text-2xl pb-2">Zero Fall Studios</h3>
                       </a>
+                      <p>
+                        Game studio with experienced developers ready to turn
+                        your ideas into reality. Zero Fall Studios has many
+                        title like Junkyard Quest, and Fall Quest: The Last
+                        Corruption.
+                      </p>
+                    </div>
+                  </CardContent>
+                  <CardFooter></CardFooter>
+                </Card>
+                <Card>
+                  <CardHeader>
+                    <a href="https://tipodd.itch.io/godot-weather">
+                      <img
+                        src="https://img.itch.zone/aW1nLzI2OTk5Njc2LnBuZw==/315x250%23c/TKN80F.png"
+                        className="rounded-xl w-full"
+                      />
+                    </a>
+                  </CardHeader>
+                  <CardContent>
+                    <div className="">
+                      <a href="https://tipodd.itch.io/godot-weather">
+                        <h3 className="text-2xl pb-2">Godot Weather</h3>
+                      </a>
+                      <p>
+                        Weather simulation for different weather types in Godot.
+                        Since it uses gpu particles it works best on an actual
+                        app rather than a web export.
+                      </p>
+                    </div>
+                  </CardContent>
+                  <CardFooter></CardFooter>
+                </Card>
+                <Card>
+                  <CardHeader>
+                    <a href="https://tipodd.itch.io/pixel-ui">
+                      <img
+                        src="https://img.itch.zone/aW1nLzI2OTE5Mzg0LnBuZw==/315x250%23c/BxVVZ9.png"
+                        className="rounded-xl  w-full"
+                      />
+                    </a>
+                  </CardHeader>
+                  <CardContent>
+                    <div className="">
+                      <a href="https://tipodd.itch.io/pixel-ui">
+                        <h3 className="text-2xl pb-2">UI Asset Packs</h3>
+                      </a>
+                      <p>
+                        This pack has all in one UI images. Everything comes
+                        with the png and aseprite files.
+                      </p>
+                    </div>
+                  </CardContent>
+                  <CardFooter></CardFooter>
+                </Card>
+                <Card>
+                  <CardHeader>
+                    <h2
+                      id="card-heading"
+                      className="text-xs font-medium uppercase tracking-widest text-zinc-500 pb-5"
+                    >
+                      Blog
+                    </h2>
+                    <h3 className="text-base font-semibold leading-snug text-zinc-950 sm:text-lg">
+                      {defaultBlogPost.title}
+                    </h3>
+                    <p className="mt-1.5 text-sm text-zinc-500">
+                      <time dateTime={defaultBlogPost.dateIso}>
+                        {defaultBlogPost.dateLabel}
+                      </time>
                     </p>
-                  </article>
-                </CardContent>
-                <CardFooter></CardFooter>
-              </Card>
-            </div>
+                  </CardHeader>
+                  <CardContent>
+                    <article className="mt-4 max-w-full rounded-lg border border-zinc-200 bg-white px-5 py-5 sm:px-6 sm:py-6">
+                      <header></header>
+                      <p className="mt-4 text-sm leading-relaxed text-zinc-600 sm:text-base">
+                        {defaultBlogPost.body}
+                      </p>
+                      <p className="mt-4 text-sm">
+                        <a
+                          href={defaultBlogPost.repoHref}
+                          className="font-medium text-zinc-900 underline-offset-4 hover:underline"
+                        >
+                          View source on GitHub
+                        </a>
+                      </p>
+                    </article>
+                  </CardContent>
+                  <CardFooter></CardFooter>
+                </Card>
+              </div>
+            </motion.div>
           </div>
           <div className="bg-[url('/code1.jpeg')] bg-cover bg-center h-100"></div>
           <div ref={targetRef2} className="py-10 flex flex-col gap-10">
