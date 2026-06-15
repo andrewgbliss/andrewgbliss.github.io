@@ -56,14 +56,26 @@ const linkButtonClass = {
     "inline-flex min-h-11 items-center justify-center gap-2 border border-zinc-300 bg-white px-4 py-2.5 text-sm font-medium text-zinc-900 transition-colors hover:border-zinc-400 hover:bg-zinc-50 active:bg-zinc-100 sm:min-h-0 sm:px-5 sm:py-3",
 } as const;
 
-/** Placeholder first post until a real blog exists. */
-const defaultBlogPost = {
-  title: "This site: Next.js, React, and Tailwind on GitHub Pages",
-  dateIso: "2026-03-28",
-  dateLabel: "March 28, 2026",
-  body: `I rebuilt my personal site as a Next.js app with React and Tailwind CSS so I can iterate on layout and content like any other product—components, routing, and static export fit naturally with hosting on GitHub Pages at andrewgbliss.github.io. The stack keeps the UI consistent and fast to change while I use the same repo for resumes, portfolio pages, and small experiments.`,
-  repoHref: "https://github.com/andrewgbliss/andrewgbliss.github.io",
-} as const;
+const blogPosts = [
+  {
+    title: "How to Create an Auto Coder Pad with React and Tailwind CSS",
+    dateLabel: "2020-10-06",
+    body: `I was on the Tailwind CSS website the other day, and I noticed they have an awesome auto coder pad on their main page. As the auto coder pad types it changes the css so you can see how to use Tailwind CSS to create styled components. So naturally I wanted to add it on my website.`,
+    href: "/articles/how-to-create-an-auto-coder-pad-with-react-and-tailwind-css",
+  },
+  {
+    title: "How to Trigger Animations with React Hooks",
+    dateLabel: "2021-03-01",
+    body: `In this day and age websites seem to require animations. I would say, depending on what type of website you are going for, animations may be appropriate. In this article let’s go over how to trigger animations using React Hooks. We want to be able to control when the user sees the animation. When the user scrolls to a certain section of the website we will slide the element in using CSS.`,
+    href: "/articles/how-to-trigger-animations-with-react-hooks",
+  },
+  {
+    title: "How to Build a Star Rating Component in React",
+    dateLabel: "2020-10-26",
+    body: `Chances are if you are developing a blog or a CMS you want the user to be able to rate articles or products. This will give you the ability to recommend products based on how popular a products has become. This article will go over how to build a Star Rating component in React.`,
+    href: "/articles/how-to-build-a-star-rating-component-in-react",
+  },
+];
 
 export function HoverLinks() {
   const targetRef = useRef<HTMLDivElement>(null);
@@ -149,7 +161,7 @@ export function HoverLinks() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "0px 0px -100px 0px" }}
             >
-              Portfolio
+              Let's work together!
             </motion.h2>
           </div>
           <div className="flex flex-col items-center py-10 gap-10">
@@ -167,7 +179,6 @@ export function HoverLinks() {
                   className="w-50 sm:w-100  border-2 rounded-2xl"
                 />
                 <div className="sm:w-120 flex flex-col gap-5 p-5 sm:justify-start sm:items-start justify-center items-center">
-                  <p className="sm:text-4xl text-2xl">Let's work together!</p>
                   <p>
                     Experienced Full Stack Developer. Background in web
                     development, apps, mobile, with a track record in optimized,
@@ -180,6 +191,78 @@ export function HoverLinks() {
                 </div>
               </div>
             </motion.div>
+            <div className="text-center pt-10">
+              <motion.h2
+                ref={ref}
+                className="text-5xl"
+                initial={{ opacity: 0, y: 24 }}
+                animate={
+                  isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 24 }
+                }
+                transition={{ duration: 0.6, ease: "easeOut" }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, margin: "0px 0px -100px 0px" }}
+              >
+                Blog
+              </motion.h2>
+            </div>
+            <motion.div
+              ref={ref}
+              initial={{ opacity: 0, y: 24 }}
+              animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 24 }}
+              transition={{ duration: 0.6, ease: "easeOut" }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, margin: "0px 0px -100px 0px" }}
+            >
+              <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-5 p-5">
+                {blogPosts.map((post, index) => {
+                  return (
+                    <Card key={index}>
+                      <CardHeader>
+                        <h3 className="text-base font-semibold leading-snug text-zinc-950 sm:text-lg">
+                          {post.title}
+                        </h3>
+                        <p className="mt-1.5 text-sm text-zinc-500">
+                          <time>{post.dateLabel}</time>
+                        </p>
+                      </CardHeader>
+                      <CardContent>
+                        <article className="mt-4 max-w-full">
+                          <header></header>
+                          <p className="mt-4 text-sm leading-relaxed text-zinc-600 sm:text-base">
+                            {post.body}
+                          </p>
+                          <p className="mt-4 text-sm">
+                            <a
+                              href={post.href}
+                              className="font-medium text-zinc-900 underline-offset-4 hover:underline"
+                            >
+                              View article
+                            </a>
+                          </p>
+                        </article>
+                      </CardContent>
+                      <CardFooter></CardFooter>
+                    </Card>
+                  );
+                })}
+              </div>
+            </motion.div>
+            <div className="text-center pt-10">
+              <motion.h2
+                ref={ref}
+                className="text-5xl"
+                initial={{ opacity: 0, y: 24 }}
+                animate={
+                  isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 24 }
+                }
+                transition={{ duration: 0.6, ease: "easeOut" }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, margin: "0px 0px -100px 0px" }}
+              >
+                Portfolio
+              </motion.h2>
+            </div>
             <motion.div
               ref={ref}
               initial={{ opacity: 0, y: 24 }}
@@ -255,41 +338,6 @@ export function HoverLinks() {
                         with the png and aseprite files.
                       </p>
                     </div>
-                  </CardContent>
-                  <CardFooter></CardFooter>
-                </Card>
-                <Card>
-                  <CardHeader>
-                    <h2
-                      id="card-heading"
-                      className="text-xs font-medium uppercase tracking-widest text-zinc-500 pb-5"
-                    >
-                      Blog
-                    </h2>
-                    <h3 className="text-base font-semibold leading-snug text-zinc-950 sm:text-lg">
-                      {defaultBlogPost.title}
-                    </h3>
-                    <p className="mt-1.5 text-sm text-zinc-500">
-                      <time dateTime={defaultBlogPost.dateIso}>
-                        {defaultBlogPost.dateLabel}
-                      </time>
-                    </p>
-                  </CardHeader>
-                  <CardContent>
-                    <article className="mt-4 max-w-full rounded-lg border border-zinc-200 bg-white px-5 py-5 sm:px-6 sm:py-6">
-                      <header></header>
-                      <p className="mt-4 text-sm leading-relaxed text-zinc-600 sm:text-base">
-                        {defaultBlogPost.body}
-                      </p>
-                      <p className="mt-4 text-sm">
-                        <a
-                          href={defaultBlogPost.repoHref}
-                          className="font-medium text-zinc-900 underline-offset-4 hover:underline"
-                        >
-                          View source on GitHub
-                        </a>
-                      </p>
-                    </article>
                   </CardContent>
                   <CardFooter></CardFooter>
                 </Card>
