@@ -37,7 +37,7 @@ export async function generateMetadata({
   const title = `${article.title} - ${website.name}`;
   const url = `${website.url}/articles/${slug}`;
   const description = article.tagline;
-  const images = [article.image ?? ""];
+  const images = [website.url + "/code1.jpeg"];
   const keywords = article.tags ?? [];
   return {
     ...generateDefaultMetadata({ title, url, description, images, keywords }),

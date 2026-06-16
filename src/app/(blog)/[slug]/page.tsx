@@ -39,7 +39,6 @@ export default async function ArticlesFrontPage({
 export const generateStaticParams = async () => {
   const tags = await getTags();
   const ret = tags.map((tag) => ({ slug: tag }));
-  console.log({ ret });
   return ret;
 };
 
@@ -59,7 +58,7 @@ export async function generateMetadata({
       description: `Articles about ${slug}`,
       images: [
         {
-          url: `${website.url}/${slug}`,
+          url: `${website.url}/code1.jpeg`,
         },
       ],
       type: "website",
@@ -70,7 +69,7 @@ export async function generateMetadata({
       card: "summary_large_image",
       title: `${website.name} - ${slug}`,
       description: `Articles about ${slug}`,
-      images: [`${website.url}/${slug}`],
+      images: [`${website.url}/code1.jpeg`],
     },
     robots: {
       index: true,

@@ -20,22 +20,22 @@ export type Website = {
 };
 
 export const website: Website = {
-  applicationName: "Bliss Code",
+  applicationName: "Andrew G Bliss",
   authors: [
     {
-      name: "Bliss Code",
-      url: "https://www.blisscode.dev",
+      name: "Andrew G Bliss",
+      url: "https://www.andrewgbliss.com",
     },
   ],
-  title: "Bliss Code",
-  name: "Bliss Code",
+  title: "Andrew G Bliss",
+  name: "Andrew G Bliss",
   tagline: "software, audio, create",
   description: "software, audio, create",
-  url: "https://www.blisscode.dev",
-  shortUrl: "blisscode.dev",
-  email: "blisscodellc@gmail.com",
+  url: "https://www.andrewgbliss.com",
+  shortUrl: "andrewgbliss.com",
+  email: "andrewgbliss@gmail.com",
   socialMediaLinks: {
-    youtube: "https://www.youtube.com/@BlissCoder0",
+    youtube: "",
   },
   address: "Lehi, Utah",
 };
