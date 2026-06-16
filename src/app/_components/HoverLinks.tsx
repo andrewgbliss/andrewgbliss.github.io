@@ -58,16 +58,16 @@ const linkButtonClass = {
 
 const blogPosts = [
   {
+    title: "Making a React sliding animation with motion",
+    dateLabel: "2026-06-16",
+    body: `Modern websites have come a long way in animation. While a static website is just fine, adding animations can make your website feel more professional. However adding too many animations can make it feel clunky and confuse people. This article will go over how to make a simple react component using the package motion to create a sublte sliding animation.`,
+    href: "/articles/making-a-react-sliding-animation-with-motion",
+  },
+  {
     title: "How to Create an Auto Coder Pad with React and Tailwind CSS",
     dateLabel: "2020-10-06",
     body: `I was on the Tailwind CSS website the other day, and I noticed they have an awesome auto coder pad on their main page. As the auto coder pad types it changes the css so you can see how to use Tailwind CSS to create styled components. So naturally I wanted to add it on my website.`,
     href: "/articles/how-to-create-an-auto-coder-pad-with-react-and-tailwind-css",
-  },
-  {
-    title: "How to Trigger Animations with React Hooks",
-    dateLabel: "2021-03-01",
-    body: `In this day and age websites seem to require animations. I would say, depending on what type of website you are going for, animations may be appropriate. In this article let’s go over how to trigger animations using React Hooks. We want to be able to control when the user sees the animation. When the user scrolls to a certain section of the website we will slide the element in using CSS.`,
-    href: "/articles/how-to-trigger-animations-with-react-hooks",
   },
   {
     title: "How to Build a Star Rating Component in React",
@@ -79,7 +79,6 @@ const blogPosts = [
 
 export function HoverLinks() {
   const targetRef = useRef<HTMLDivElement>(null);
-  const targetRef2 = useRef<HTMLDivElement>(null);
   const targetRef3 = useRef<HTMLDivElement>(null);
 
   const handleScroll = (e: any) => {
@@ -89,15 +88,6 @@ export function HoverLinks() {
     // 3. Smoothly scroll to the element
     if (targetRef.current) {
       targetRef.current.scrollIntoView({ behavior: "smooth" });
-    }
-  };
-  const handleScroll2 = (e: any) => {
-    // 2. Prevent the traditional href page refresh
-    e.preventDefault();
-
-    // 3. Smoothly scroll to the element
-    if (targetRef2.current) {
-      targetRef2.current.scrollIntoView({ behavior: "smooth" });
     }
   };
   const handleScroll3 = (e: any) => {
@@ -113,7 +103,7 @@ export function HoverLinks() {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, margin: "0px 0px -100px 0px" });
   return (
-    <div ref={targetRef3} className="w-full pb-10">
+    <div ref={targetRef3} className="w-full">
       <div className="flex flex-col gap-5">
         <div className="bg-[url('/pexels-danny-meneses-340146-943096.jpg')] bg-cover bg-center h-screen">
           <div className="flex sm:flex-row flex-col gap-5 py-10 max-w-4xl px-5 ">
@@ -134,7 +124,7 @@ export function HoverLinks() {
                 <TypingWords
                   className="text-xl"
                   startNow
-                  text="You have stumbled onto a developers professional website. Look below for portfolio and contact info."
+                  text="You have stumbled onto the professional website of Andrew Bliss. Senior Full Stack Software Engineer."
                 />
               </motion.div>
               <motion.p
@@ -143,28 +133,19 @@ export function HoverLinks() {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, ease: "easeOut", delay: 3 }}
               >
-                <Button className="text-lg" size={"xl"} onClick={handleScroll}>
-                  Click here to start 👉
+                <Button
+                  className="text-lg cursor-pointer"
+                  size={"xl"}
+                  onClick={handleScroll}
+                >
+                  Begin your journey 👉
                 </Button>
               </motion.p>
             </div>
           </div>
         </div>
         <div ref={targetRef} className="">
-          <div className="text-center pt-10">
-            <motion.h2
-              ref={ref}
-              className="text-5xl"
-              initial={{ opacity: 0, y: 24 }}
-              animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 24 }}
-              transition={{ duration: 0.6, ease: "easeOut" }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, margin: "0px 0px -100px 0px" }}
-            >
-              Let's work together!
-            </motion.h2>
-          </div>
-          <div className="flex flex-col items-center py-10 gap-10">
+          <div className="text-center pt-20 h-50">
             <motion.div
               ref={ref}
               initial={{ opacity: 0, y: 24 }}
@@ -173,24 +154,112 @@ export function HoverLinks() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "0px 0px -100px 0px" }}
             >
-              <div className="flex sm:flex-row flex-col gap-5 items-center py-10">
-                <img
-                  src="/hover-illustration.svg"
-                  className="w-50 sm:w-100  border-2 rounded-2xl"
-                />
-                <div className="sm:w-120 flex flex-col gap-5 p-5 sm:justify-start sm:items-start justify-center items-center">
-                  <p>
-                    Experienced Full Stack Developer. Background in web
-                    development, apps, mobile, with a track record in optimized,
-                    responsive design. You can find my contact information
-                    below.
-                  </p>
-                  <Button size={"xl"} onClick={handleScroll2}>
-                    Contact Info 👉
-                  </Button>
-                </div>
+              <div className="flex justify-center flex-wrap gap-10">
+                <h3 className="text-5xl">Let's work together!</h3>
+                <p className="w-100">
+                  Experienced Full Stack Developer. Background in web
+                  development, apps, mobile, with a track record in optimized,
+                  responsive design.
+                </p>
               </div>
             </motion.div>
+          </div>
+          <div className="flex flex-col items-center py-10 gap-10">
+            <div className="py-10 flex flex-col gap-10">
+              <Card>
+                <CardHeader>
+                  <div className="flex sm:flex-row flex-col gap-10 flex-wrap sm:items-center">
+                    <img
+                      src="/andy.jpg"
+                      alt=""
+                      className="aspect-5/4 max-h-[min(40vh,16rem)] w-50 object-cover object-[center_20%] sm:aspect-21/14 sm:max-h-full sm:object-[center_10%] rounded-xl"
+                    />
+                    <div>
+                      <h1
+                        id="intro-heading"
+                        className="sm:mt-3 text-xl font-semibold leading-[1.15] tracking-tight text-zinc-950 sm:text-4xl sm:leading-[1.1]"
+                      >
+                        {website.name}
+                      </h1>
+                      <h2 className="mt-1 text-base font-medium text-zinc-800 sm:text-xl">
+                        software, audio, create
+                      </h2>
+                    </div>
+
+                    <nav className="flex flex-wrap gap-2 sm:gap-3">
+                      {siteLinks.map(({ href, label, icon: Icon, variant }) => (
+                        <Link
+                          key={href}
+                          href={href}
+                          className={linkButtonClass[variant]}
+                        >
+                          <Icon
+                            size={18}
+                            className="shrink-0 opacity-90"
+                            aria-hidden
+                          />
+                          {label}
+                        </Link>
+                      ))}
+                    </nav>
+                  </div>
+                </CardHeader>
+              </Card>
+              <Card>
+                <CardHeader>
+                  <h2
+                    id="card-heading"
+                    className="text-xs font-medium uppercase tracking-widest text-zinc-500"
+                  >
+                    Contact
+                  </h2>
+                </CardHeader>
+                <CardContent>
+                  <div className="mt-4 px-5  sm:px-7">
+                    <div className="flex flex-col gap-5 sm:flex-row sm:items-start sm:justify-between sm:gap-8">
+                      <img
+                        src="/hover-illustration.svg"
+                        className="w-50 sm:w-100  border-2 rounded-2xl"
+                      />
+                      <div className="min-w-0">
+                        <p className="text-lg font-semibold text-zinc-950 sm:text-xl">
+                          {resume.name}
+                        </p>
+                        <p className="mt-0.5 text-sm font-medium text-zinc-700">
+                          {resume.bio}
+                        </p>
+                        <div className="mt-4 flex flex-col gap-2 text-sm text-zinc-700">
+                          <a
+                            href={`mailto:${resume.email}`}
+                            className="inline-flex w-fit items-center gap-2 text-zinc-900 underline-offset-4 hover:underline"
+                          >
+                            <Mail
+                              size={16}
+                              className="shrink-0 text-zinc-500"
+                              aria-hidden
+                            />
+                            {resume.email}
+                          </a>
+                          <span className="inline-flex items-center gap-2 text-zinc-600">
+                            <MapPin
+                              size={16}
+                              className="shrink-0 text-zinc-400"
+                              aria-hidden
+                            />
+                            {resume.address.city}, {resume.address.state}
+                          </span>
+                        </div>
+                      </div>
+                      <div className="flex shrink-0 flex-col gap-2 sm:items-end"></div>
+                    </div>
+                  </div>
+                </CardContent>
+                <CardFooter></CardFooter>
+              </Card>
+            </div>
+          </div>
+          <div className="bg-[url('/code1.jpeg')] bg-cover bg-center h-100"></div>
+          <div className="flex flex-col items-center py-10 gap-10">
             <div className="text-center pt-10">
               <motion.h2
                 ref={ref}
@@ -344,109 +413,64 @@ export function HoverLinks() {
               </div>
             </motion.div>
           </div>
-          <div className="bg-[url('/code1.jpeg')] bg-cover bg-center h-100"></div>
-          <div ref={targetRef2} className="py-10 flex flex-col gap-10">
-            <Card>
-              <CardHeader>
-                <div className="flex sm:flex-row flex-col gap-10 flex-wrap sm:items-center">
-                  <img
-                    src="/andy.jpg"
-                    alt=""
-                    className="aspect-5/4 max-h-[min(40vh,16rem)] w-50 object-cover object-[center_20%] sm:aspect-21/14 sm:max-h-full sm:object-[center_10%] rounded-xl"
-                  />
-                  <div>
-                    <h1
-                      id="intro-heading"
-                      className="sm:mt-3 text-xl font-semibold leading-[1.15] tracking-tight text-zinc-950 sm:text-4xl sm:leading-[1.1]"
-                    >
-                      {website.name}
-                    </h1>
-                    <h2 className="mt-1 text-base font-medium text-zinc-800 sm:text-xl">
-                      software, audio, create
-                    </h2>
-                  </div>
-
-                  <nav className="flex flex-wrap gap-2 sm:gap-3">
-                    {siteLinks.map(({ href, label, icon: Icon, variant }) => (
-                      <Link
-                        key={href}
-                        href={href}
-                        className={linkButtonClass[variant]}
-                      >
-                        <Icon
-                          size={18}
-                          className="shrink-0 opacity-90"
-                          aria-hidden
-                        />
-                        {label}
-                      </Link>
-                    ))}
-                  </nav>
-                </div>
-              </CardHeader>
-            </Card>
-            <Card>
-              <CardHeader>
-                <h2
-                  id="card-heading"
-                  className="text-xs font-medium uppercase tracking-widest text-zinc-500"
-                >
-                  Contact
-                </h2>
-              </CardHeader>
-              <CardContent>
-                <div className="mt-4 px-5 py-6  sm:px-7 sm:py-7">
-                  <div className="flex flex-col gap-5 sm:flex-row sm:items-start sm:justify-between sm:gap-8">
-                    <div className="min-w-0">
-                      <p className="text-lg font-semibold text-zinc-950 sm:text-xl">
-                        {resume.name}
-                      </p>
-                      <p className="mt-0.5 text-sm font-medium text-zinc-700">
-                        {resume.bio}
-                      </p>
-                      <div className="mt-4 flex flex-col gap-2 text-sm text-zinc-700">
-                        <a
-                          href={`mailto:${resume.email}`}
-                          className="inline-flex w-fit items-center gap-2 text-zinc-900 underline-offset-4 hover:underline"
-                        >
-                          <Mail
-                            size={16}
-                            className="shrink-0 text-zinc-500"
-                            aria-hidden
-                          />
-                          {resume.email}
-                        </a>
-                        <span className="inline-flex items-center gap-2 text-zinc-600">
-                          <MapPin
-                            size={16}
-                            className="shrink-0 text-zinc-400"
-                            aria-hidden
-                          />
-                          {resume.address.city}, {resume.address.state}
-                        </span>
-                      </div>
-                    </div>
-                    <div className="flex shrink-0 flex-col gap-2 sm:items-end"></div>
-                  </div>
-                </div>
-              </CardContent>
-              <CardFooter></CardFooter>
-            </Card>
-          </div>
         </div>
       </div>
-      <footer className="pt-10 px-5 text-sm font-semibold italic flex justify-between">
-        <div>
-          <p>Copyright &copy; {new Date().toLocaleDateString()}</p>
-          <p className="">
-            powered with Next.js, React, TypeScript, Tailwind, Shadcn, and
-            PostgreSQL.
-          </p>
-        </div>
-        <div className="flex justify-end">
-          <Button variant={"outline"} size={"xl"} onClick={handleScroll3}>
-            👆
-          </Button>
+      <footer className="bg-black text-white">
+        <div className="container mx-auto page-p py-12 sm:max-w-4xl">
+          <div className="grid grid-cols-1 gap-8 md:grid-cols-3">
+            <div>
+              <h3 className="mb-4 text-lg font-semibold ">Links</h3>
+              <ul className="space-y-2">
+                <li>
+                  <Link
+                    href="/"
+                    className="transition-colors hover:text-indigo-400"
+                  >
+                    Home
+                  </Link>
+                </li>
+                <li>
+                  <Link
+                    href="/support"
+                    className="transition-colors hover:text-indigo-400"
+                  >
+                    Support
+                  </Link>
+                </li>
+                <li>
+                  <Link
+                    href="/privacy"
+                    className="transition-colors hover:text-indigo-400"
+                  >
+                    Privacy Policy
+                  </Link>
+                </li>
+                <li>
+                  <Link
+                    href="/terms"
+                    className="transition-colors hover:text-indigo-400"
+                  >
+                    Terms of Service
+                  </Link>
+                </li>
+              </ul>
+            </div>
+          </div>
+          <div className="mt-8 border-t border-zinc-800 pt-8 text-center text-sm">
+            <p>
+              &copy; {new Date().getFullYear()} {website.name}. All rights
+              reserved.
+            </p>
+            <p className="">
+              powered with Next.js, React, TypeScript, Tailwind, Shadcn, and
+              PostgreSQL.
+            </p>
+          </div>
+          <div className="flex justify-end">
+            <Button variant={"outline"} size={"xl"} onClick={handleScroll3}>
+              👆
+            </Button>
+          </div>
         </div>
       </footer>
     </div>

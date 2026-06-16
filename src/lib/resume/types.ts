@@ -47,4 +47,5 @@ export type ResumeDocument = ResumeOptions & {
   navLabel: string;
   /** Public path under / for PDF download, e.g. "Resume.pdf" */
   pdfFilename?: string;
+  wordFilename?: string;
 };

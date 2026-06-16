@@ -6,14 +6,15 @@ export const mainResume: ResumeDocument = {
   seo: {
     title: "Andrew Bliss — Resume",
     description:
-      "Senior full stack engineer delivering secure, performant, reliable software products.",
+      "Experienced full stack software engineer seeks full time employment.",
   },
-  pdfFilename: "/BlissAndrew_Resume.pdf",
+  pdfFilename: "/assets/Andrew Bliss - Resume.pdf",
+  wordFilename: "/assets/Andrew Bliss - Resume.docx",
   name: "Andrew Bliss",
   email: "andrewgbliss@gmail.com",
   bio: `Senior Full Stack Software Engineer`,
   tagline:
-    "Experienced with full stack development, from initial design to deployment. Utilizes modern frameworks and tools to build efficient and maintainable applications. Knowledge of best practices in coding, debugging, and collaborating within agile teams. Can do type of person who likes to get things done.",
+    "Experienced full stack software engineer seeks full time employment. Managed many successful web apps using React, TypeScript, Node.js, and PostgreSQL. Developer who likes to get things done in the most efficient way using best practices. Can do type of person who loves to help and mentor people.",
   aboutParagraphs: [
     "I'm a senior full-stack engineer based in Lehi, Utah, with a B.S. in Computer Science from Stevens-Henager College. Most of my recent work spans React, TypeScript, Next.js, Node, and PostgreSQL—alongside data systems like BigQuery—where I focus on performance, reliability, and features people actually use every day.",
     "Earlier in my career I spent years consulting: migrating legacy PHP applications to a modern Next.js stack, improving cost and velocity, and building solar-industry software in React and TypeScript that helped clients shorten sales cycles and grow revenue. I'm happiest when engineering decisions show up as clearer UX, stable releases, and measurable savings.",
@@ -38,8 +39,9 @@ export const mainResume: ResumeDocument = {
       to: "Current",
       skills: ["React", "Typescript", "Tailwind", "Next.Js", "PostgreSQL"],
       bulletpoints: [
-        "Built the entire system of reconditioning vehicles task software and vehicle dealership analysis, which increased user sign up 100%, getting MMR to 10k",
-        "Saved the company more than 10k each month by optimizing BigQuery, PostgreSQL databases, aggregated data to be faster in the front end.",
+        "Managed a legacy system in PHP and built a new system using React, Next.js.",
+        "Built a vehicle reconditioning system where dealerships could create tasks, take photos, push to seller api’s, in real time.",
+        "One issue we faced was having so many vehicle records per day, so in BigQuery and PostgreSQL I built a daily aggregation script that would build partitions, create views, ensure correct indexes so that it was incredibly fast to query on the front end.",
       ],
     },
     {
@@ -50,7 +52,9 @@ export const mainResume: ResumeDocument = {
       to: "Sep, 2022",
       skills: ["React", "Typescript", "Tailwind", "Next.js", "PostgreSQL"],
       bulletpoints: [
-        "Built a dynamic builder so companies could customize their solar proposal to their clients, which made it easier for companies to make point of sale. Companies sign up and we made record profits, grew the company by 200 people",
+        "Managed a legacy system in PHP and built a new solar appraisal software using React, Next.js.",
+        "Built appraisal software for solar companies to sell construction contracts for installing solar panels.",
+        "One issue we faced is our customer service software wasn’t real time in the legacy system it was polling. So I built a queue using Node.js and Redis so customer service could pick up calls and chats with no downtime.",
       ],
     },
   ],

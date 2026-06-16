@@ -13,8 +13,7 @@ export const authors: Author[] = [
   {
     slug: "andrew-bliss",
     name: "Andrew Bliss",
-    image:
-      "https://storage.googleapis.com/blisscoder-0-public/andrewgbliss/img/andy.jpg",
+    image: "/andy.jpg",
     tagline: "Web Developer & Tech Enthusiast",
     bio: "Andrew Bliss is a web developer and tech enthusiast with a passion for creating innovative solutions to complex problems. He is a full-stack developer with a strong focus on building scalable and secure web applications.",
     links: [

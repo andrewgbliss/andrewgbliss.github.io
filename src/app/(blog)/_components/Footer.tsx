@@ -20,6 +20,14 @@ export const Footer = () => {
               </li>
               <li>
                 <Link
+                  href="/articles"
+                  className="transition-colors hover:text-indigo-400"
+                >
+                  Articles
+                </Link>
+              </li>
+              <li>
+                <Link
                   href="/support"
                   className="transition-colors hover:text-indigo-400"
                 >

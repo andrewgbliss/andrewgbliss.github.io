@@ -31,5 +31,5 @@ export function getResumeById(id: string): ResumeDocument | undefined {
 }
 
 export function getAllResumeIds(): Array<string> {
-  return resumeDocuments.map((r) => r.id);
+  return resumeDocuments.map((r) => r.id).filter((item) => item !== null);
 }
