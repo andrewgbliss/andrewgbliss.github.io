@@ -31,7 +31,7 @@ export function TypingWords({
       setIndex((prev) => prev + 1);
     };
     if (index < text.length) {
-      setTimeout(type, 30);
+      setTimeout(type, 15);
     }
   }, [start, startNow, content]);
   return (

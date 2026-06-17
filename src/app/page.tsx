@@ -39,9 +39,7 @@ export const metadata: Metadata = {
 export default function Page() {
   return (
     <main className="min-h-screen w-full">
-      <div className="mx-auto min-h-screen">
-        <HoverLinks />
-      </div>
+      <HoverLinks />
     </main>
   );
 }
