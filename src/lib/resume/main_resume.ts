@@ -12,9 +12,9 @@ export const mainResume: ResumeDocument = {
   wordFilename: "/assets/Andrew Bliss - Resume.docx",
   name: "Andrew Bliss",
   email: "andrewgbliss@gmail.com",
-  bio: `Senior Full Stack Software Engineer`,
+  bio: `Software Engineer`,
   tagline:
-    "Experienced full stack software engineer seeks full time employment. Managed many successful web apps using React, TypeScript, Node.js, and PostgreSQL. Developer who likes to get things done in the most efficient way using best practices. Can do type of person who loves to help and mentor people.",
+    "Software engineer with 8+ years of experience designing, building, and scaling production web applications. Specializes in React, Next.js, Node.js, and PostgreSQL/BigQuery-based data systems, with a track record of migrating legacy platforms to modern architectures and building real-time, high-throughput backend systems.",
   aboutParagraphs: [
     "I'm a senior full-stack engineer based in Lehi, Utah, with a B.S. in Computer Science from Stevens-Henager College. Most of my recent work spans React, TypeScript, Next.js, Node, and PostgreSQL—alongside data systems like BigQuery—where I focus on performance, reliability, and features people actually use every day.",
     "Earlier in my career I spent years consulting: migrating legacy PHP applications to a modern Next.js stack, improving cost and velocity, and building solar-industry software in React and TypeScript that helped clients shorten sales cycles and grow revenue. I'm happiest when engineering decisions show up as clearer UX, stable releases, and measurable savings.",
@@ -32,29 +32,28 @@ export const mainResume: ResumeDocument = {
   },
   workExperience: [
     {
-      title: "Senior Full Stack Software Engineer",
+      title: "Software Engineer",
       company: "Carketa",
       location: "Lehi, UT",
       from: "Sep, 2022",
       to: "Current",
       skills: ["React", "Typescript", "Tailwind", "Next.Js", "PostgreSQL"],
       bulletpoints: [
-        "Managed a legacy system in PHP and built a new system using React, Next.js.",
-        "Built a vehicle reconditioning system where dealerships could create tasks, take photos, push to seller api’s, in real time.",
-        "One issue we faced was having so many vehicle records per day, so in BigQuery and PostgreSQL I built a daily aggregation script that would build partitions, create views, ensure correct indexes so that it was incredibly fast to query on the front end.",
+        "Led the migration of a legacy PHP system to a modern React/Next.js architecture, modernizing core platform workflows.",
+        "Architected and built a vehicle reconditioning system that lets dealership teams create tasks, capture photos, and push updates to seller APIs in real time.",
+        "Built a daily data aggregation pipeline spanning BigQuery and PostgreSQL, including table partitioning, materialized views, and indexing strategy, to keep dashboard queries fast as daily vehicle record volume grew.",
       ],
     },
     {
-      title: "Senior Full Stack Software Engineer",
+      title: "Software Engineer",
       company: "nth-child consulting",
       location: "Orem, UT",
       from: "Dec, 2017",
       to: "Sep, 2022",
       skills: ["React", "Typescript", "Tailwind", "Next.js", "PostgreSQL"],
       bulletpoints: [
-        "Managed a legacy system in PHP and built a new solar appraisal software using React, Next.js.",
-        "Built appraisal software for solar companies to sell construction contracts for installing solar panels.",
-        "One issue we faced is our customer service software wasn’t real time in the legacy system it was polling. So I built a queue using Node.js and Redis so customer service could pick up calls and chats with no downtime.",
+        "Led the transition from a legacy PHP system to a new solar appraisal platform built with React and Next.js, used by solar companies to manage and sell installation contracts.",
+        "Replaced a polling-based customer service system with a Node.js and Redis-backed queue, enabling real-time call and chat handling with no downtime for the support team..",
       ],
     },
   ],

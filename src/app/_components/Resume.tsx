@@ -31,7 +31,6 @@ function SkillPill({ children }: { children: ReactNode }) {
 
 export function Resume({ document }: { document: ResumeDocument }) {
   const pdfName = document.pdfFilename ?? "BlissAndrew_Resume.pdf";
-  const wordName = document.wordFilename ?? "BlissAndrew_Resume.docx";
   const resumePageUrl = `${website.url}/resume/${document.id}`;
 
   return (
@@ -206,14 +205,7 @@ export function Resume({ document }: { document: ResumeDocument }) {
               <FileText size={18} className="shrink-0 opacity-80" aria-hidden />
               Download PDF
             </button>
-            <button
-              type="button"
-              className={primaryNavBtn}
-              onClick={() => window.open(wordName, "_blank")}
-            >
-              <FileText size={18} className="shrink-0 opacity-80" aria-hidden />
-              Download Word Doc
-            </button>
+
             <Link href="/" className={outlineNavBtn}>
               <ArrowLeft
                 size={18}

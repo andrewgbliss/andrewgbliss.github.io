@@ -181,11 +181,11 @@ export function HoverLinks() {
                   </CardHeader>
                   <CardContent>
                     <div className="mt-4 px-1 sm:px-7">
-                      <div className="flex flex-col gap-5 sm:flex-row sm:items-start sm:justify-between sm:gap-8">
+                      <div className="flex flex-col gap-0 sm:flex-row sm:items-start sm:justify-between">
                         <img
                           src="/andy.jpg"
                           alt=""
-                          className="aspect-5/4 max-h-[min(40vh,16rem)] w-50 object-cover object-[center_20%] sm:aspect-21/14 sm:max-h-full sm:object-[center_10%] rounded-xl"
+                          className="aspect-5/4 max-h-[min(40vh,16rem)] w-75 sm:w-100 object-cover object-[center_20%] sm:aspect-21/14 sm:max-h-full sm:object-[center_10%] rounded-xl"
                         />
                         <div className="min-w-0">
                           <p className="text-lg font-semibold text-zinc-950 sm:text-xl">
@@ -233,7 +233,7 @@ export function HoverLinks() {
                     <div className="flex flex-col sm:flex-row gap-10 sm:items-center">
                       <img
                         src="/hover-illustration.svg"
-                        className="w-75 sm:w-100  border-2 rounded-2xl"
+                        className="w-75 sm:w-100 border-2 rounded-2xl"
                       />
                       <nav className="flex flex-wrap gap-2 sm:gap-3">
                         {siteLinks.map(

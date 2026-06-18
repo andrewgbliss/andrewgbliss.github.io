@@ -14,7 +14,7 @@ export default async function Layout({
 
   return (
     <>
-      <div className="min-h-screen text-white flex flex-col bg-linear-to-b from-slate-900 via-slate-800 to-slate-900">
+      <div className="min-h-screen text-white flex flex-col bg-linear-to-b from-slate-900 via-slate-800 to-slate-900 px-5">
         <div className="container mx-auto">
           <main className="flex-1">
             <article className="container mx-auto page-p py-12 sm:max-w-4xl">

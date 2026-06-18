@@ -21,7 +21,7 @@ export const authors: Author[] = [
       "https://www.github.com/andrewgbliss",
       "https://www.linkedin.com/in/andrewgbliss/",
     ],
-    portfolio: "https://www.blisscode.dev/portfolio",
+    portfolio: "https://www.andrewgbliss.com/storybook",
     resume: "https://www.andrewgbliss.com/resume",
   },
 ];

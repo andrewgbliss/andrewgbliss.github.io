@@ -17,9 +17,9 @@ export const AuthorProfile = ({ author }: { author: Author }) => {
             <h1 className="text-2xl md:text-3xl font-bold mb-2">
               {author.name}
             </h1>
-            <p className="text-muted-foreground mb-4">{author.tagline}</p>
+            <p className="mb-4">{author.tagline}</p>
             <hr className="my-4" />
-            <p className="text-muted-foreground mb-4">{author.bio}</p>
+            <p className="mb-4">{author.bio}</p>
             <div className="flex gap-4 mb-4">
               {author.portfolio && (
                 <Link
@@ -78,7 +78,7 @@ export const AuthorProfile = ({ author }: { author: Author }) => {
                 <Link
                   href={link}
                   key={link}
-                  className="text-muted-foreground hover:underline"
+                  className="hover:underline"
                   target="_blank"
                 >
                   {link}

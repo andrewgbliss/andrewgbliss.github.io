@@ -4,7 +4,7 @@ import { QRCodeSVG } from "qrcode.react";
 
 export const Footer = () => {
   return (
-    <footer className="bg-black text-zinc-300">
+    <footer className="bg-black text-zinc-300 px-5">
       <div className="container mx-auto page-p py-12 sm:max-w-4xl">
         <div className="grid grid-cols-1 gap-8 md:grid-cols-3">
           <div>

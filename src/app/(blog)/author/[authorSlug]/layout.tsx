@@ -9,9 +9,9 @@ export default async function Layout({
   const articles = await getPublishedArticles();
   return (
     <>
-      <div className="text-white flex flex-col bg-linear-to-b from-slate-900 via-slate-800 to-slate-900">
+      <div className="text-white flex flex-col bg-linear-to-b from-slate-900 via-slate-800 to-slate-900 px-5">
         <main className="flex-1">
-          <article className="container mx-auto page-p pt-12 w-full sm:max-w-4xl">
+          <article className="container mx-auto page-p pt-12 w-full sm:max-w-4xl ">
             {children}
             <hr className="container mx-auto mb-8" />
           </article>
