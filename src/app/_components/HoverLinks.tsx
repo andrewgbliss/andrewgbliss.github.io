@@ -106,8 +106,8 @@ export function HoverLinks() {
     <>
       <div ref={targetRef3} className="w-full">
         <div className="">
-          <div className="bg-[url('/pexels-danny-meneses-340146-943096.jpg')] bg-cover bg-center h-screen">
-            <div className="mx-auto max-w-4xl flex flex-col justify-center h-screen">
+          <div className="bg-[url('/pexels-danny-meneses-340146-943096.jpg')] bg-cover bg-center h-75 sm:h-50 bg-fixed bg-no-repeat">
+            <div className="mx-auto max-w-4xl flex flex-col justify-center">
               <div className="text-white gap-5 flex flex-col py-10 px-5">
                 <motion.h3
                   className="text-4xl"
@@ -115,7 +115,7 @@ export function HoverLinks() {
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.6, ease: "easeOut" }}
                 >
-                  Welcome Wanderer,
+                  Andrew Bliss
                 </motion.h3>
                 <motion.div
                   className="min-h-24 sm:min-h-10"
@@ -126,14 +126,14 @@ export function HoverLinks() {
                   <TypingWords
                     className="text-lg"
                     startNow
-                    text="You have stumbled onto the professional website of Andrew Bliss. Senior Full Stack Software Engineer."
+                    text="Welcome to my portfolio website."
                   />
                 </motion.div>
                 <motion.p
                   className="text-4xl"
                   initial={{ opacity: 0, y: 24 }}
                   animate={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.6, ease: "easeOut", delay: 2 }}
+                  transition={{ duration: 0.6, ease: "easeOut", delay: 1 }}
                 >
                   <Button
                     className="text-xl w-full sm:w-auto cursor-pointer"
@@ -146,8 +146,8 @@ export function HoverLinks() {
               </div>
             </div>
           </div>
-          <div ref={targetRef} className="">
-            <div className="text-center pt-20 h-75 sm:h-50 px-5 mx-auto max-w-4xl">
+          <div ref={targetRef} className="bg-zinc-900">
+            <div className="text-center py-20 px-5 mx-auto max-w-4xl bg-white">
               <motion.div
                 ref={ref}
                 initial={{ opacity: 0, y: 24 }}
@@ -159,108 +159,105 @@ export function HoverLinks() {
                 viewport={{ once: true, margin: "0px 0px -100px 0px" }}
               >
                 <div className="flex justify-center flex-wrap gap-10">
-                  <h3 className="text-5xl">Let's work together!</h3>
+                  <h3 className="text-2xl sm:text-5xl">Let's work together!</h3>
                   <p className="w-100">
                     Experienced Full Stack Developer. Background in web
                     development, apps, mobile, with a track record in optimized,
                     responsive design.
                   </p>
+
+                  <Card className="w-full">
+                    <CardHeader>
+                      <h2
+                        id="card-heading"
+                        className="text-xs font-medium uppercase tracking-widest text-zinc-500"
+                      >
+                        Contact
+                      </h2>
+                    </CardHeader>
+                    <CardContent>
+                      <div className="mt-4">
+                        <div className="flex flex-col gap-5 sm:flex-row sm:items-start ">
+                          <img
+                            src="/andy.jpg"
+                            alt=""
+                            className="aspect-5/4 max-h-[min(40vh,16rem)] w-75 sm:w-75 object-cover object-[center_20%] sm:aspect-21/14 sm:max-h-full sm:object-[center_10%] rounded-xl"
+                          />
+                          <div className="min-w-0">
+                            <p className="text-lg font-semibold text-zinc-950 sm:text-xl">
+                              {resume.name}
+                            </p>
+                            <p className="mt-0.5 text-sm font-medium text-zinc-700">
+                              {resume.bio}
+                            </p>
+                            <div className="mt-4 flex flex-col gap-2 text-sm text-zinc-700">
+                              <a
+                                href={`mailto:${resume.email}`}
+                                className="inline-flex w-fit items-center gap-2 text-zinc-900 underline-offset-4 hover:underline"
+                              >
+                                <Mail
+                                  size={16}
+                                  className="shrink-0 text-zinc-500"
+                                  aria-hidden
+                                />
+                                {resume.email}
+                              </a>
+                              <span className="inline-flex items-center gap-2 text-zinc-600">
+                                <MapPin
+                                  size={16}
+                                  className="shrink-0 text-zinc-400"
+                                  aria-hidden
+                                />
+                                {resume.address.city}, {resume.address.state}
+                              </span>
+                            </div>
+                          </div>
+                          <div className="flex shrink-0 flex-col gap-2 sm:items-end"></div>
+                        </div>
+                      </div>
+                    </CardContent>
+                    <CardFooter></CardFooter>
+                  </Card>
+
+                  <Card className="w-full">
+                    <CardHeader>
+                      <h2
+                        id="card-heading"
+                        className="text-xs font-medium uppercase tracking-widest text-zinc-500 pb-5"
+                      >
+                        Projects
+                      </h2>
+                      <div className="flex flex-col sm:flex-row gap-10 sm:items-center">
+                        <img
+                          src="/hover-illustration.svg"
+                          className="w-75 sm:w-50 border-2 rounded-2xl"
+                        />
+                        <nav className="flex flex-wrap gap-2 sm:gap-3">
+                          {siteLinks.map(
+                            ({ href, label, icon: Icon, variant }) => (
+                              <Link
+                                key={href}
+                                href={href}
+                                className={linkButtonClass[variant]}
+                              >
+                                <Icon
+                                  size={18}
+                                  className="shrink-0 opacity-90"
+                                  aria-hidden
+                                />
+                                {label}
+                              </Link>
+                            ),
+                          )}
+                        </nav>
+                      </div>
+                    </CardHeader>
+                  </Card>
                 </div>
               </motion.div>
             </div>
-            <div className="flex flex-col items-center py-10 gap-10">
-              <div className="py-10 flex flex-col gap-10 px-5 mx-auto max-w-4xl">
-                <Card>
-                  <CardHeader>
-                    <h2
-                      id="card-heading"
-                      className="text-xs font-medium uppercase tracking-widest text-zinc-500"
-                    >
-                      Contact
-                    </h2>
-                  </CardHeader>
-                  <CardContent>
-                    <div className="mt-4 px-1 sm:px-7">
-                      <div className="flex flex-col gap-0 sm:flex-row sm:items-start sm:justify-between">
-                        <img
-                          src="/andy.jpg"
-                          alt=""
-                          className="aspect-5/4 max-h-[min(40vh,16rem)] w-75 sm:w-100 object-cover object-[center_20%] sm:aspect-21/14 sm:max-h-full sm:object-[center_10%] rounded-xl"
-                        />
-                        <div className="min-w-0">
-                          <p className="text-lg font-semibold text-zinc-950 sm:text-xl">
-                            {resume.name}
-                          </p>
-                          <p className="mt-0.5 text-sm font-medium text-zinc-700">
-                            {resume.bio}
-                          </p>
-                          <div className="mt-4 flex flex-col gap-2 text-sm text-zinc-700">
-                            <a
-                              href={`mailto:${resume.email}`}
-                              className="inline-flex w-fit items-center gap-2 text-zinc-900 underline-offset-4 hover:underline"
-                            >
-                              <Mail
-                                size={16}
-                                className="shrink-0 text-zinc-500"
-                                aria-hidden
-                              />
-                              {resume.email}
-                            </a>
-                            <span className="inline-flex items-center gap-2 text-zinc-600">
-                              <MapPin
-                                size={16}
-                                className="shrink-0 text-zinc-400"
-                                aria-hidden
-                              />
-                              {resume.address.city}, {resume.address.state}
-                            </span>
-                          </div>
-                        </div>
-                        <div className="flex shrink-0 flex-col gap-2 sm:items-end"></div>
-                      </div>
-                    </div>
-                  </CardContent>
-                  <CardFooter></CardFooter>
-                </Card>
-                <Card>
-                  <CardHeader>
-                    <h2
-                      id="card-heading"
-                      className="text-xs font-medium uppercase tracking-widest text-zinc-500 pb-5"
-                    >
-                      Projects
-                    </h2>
-                    <div className="flex flex-col sm:flex-row gap-10 sm:items-center">
-                      <img
-                        src="/hover-illustration.svg"
-                        className="w-75 sm:w-100 border-2 rounded-2xl"
-                      />
-                      <nav className="flex flex-wrap gap-2 sm:gap-3">
-                        {siteLinks.map(
-                          ({ href, label, icon: Icon, variant }) => (
-                            <Link
-                              key={href}
-                              href={href}
-                              className={linkButtonClass[variant]}
-                            >
-                              <Icon
-                                size={18}
-                                className="shrink-0 opacity-90"
-                                aria-hidden
-                              />
-                              {label}
-                            </Link>
-                          ),
-                        )}
-                      </nav>
-                    </div>
-                  </CardHeader>
-                </Card>
-              </div>
-            </div>
-            <div className="bg-[url('/code1.jpeg')] bg-cover bg-center h-100"></div>
-            <div className="flex flex-col items-center py-10 gap-10 mx-auto max-w-4xl">
-              <div className="text-center pt-10">
+            <div className="flex flex-col items-center gap-10 mx-auto max-w-4xl bg-white pb-10">
+              <div className="text-center">
                 <motion.h2
                   ref={ref}
                   className="text-5xl"
@@ -321,7 +318,7 @@ export function HoverLinks() {
                   })}
                 </div>
               </motion.div>
-              <div className="text-center pt-10">
+              <div className="text-center py-5">
                 <motion.h2
                   ref={ref}
                   className="text-5xl"
