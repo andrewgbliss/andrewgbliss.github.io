@@ -105,6 +105,18 @@ const mainPages: Array<ShowcaseCard> = [
     description: "Short redirect to the default résumé slug.",
     icon: FileText,
   },
+  {
+    href: "/jsondb",
+    label: "JSON DB",
+    description: "A json database for quick prototypes",
+    icon: List,
+  },
+  {
+    href: "/dashboard",
+    label: "Dashboard",
+    description: "A administrative dashboard.",
+    icon: LayoutDashboard,
+  },
 ];
 
 const testPages: Array<ShowcaseCard> = [

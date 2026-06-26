@@ -4,6 +4,8 @@ import "./globals.css";
 import Script from "next/script";
 import { website } from "@/lib/data/website";
 import { generateDefaultMetadata } from "@/lib/data/generate-metadata";
+import { ThemeProvider } from "@/components/theme-provider";
+import { Toaster } from "@/components/ui/sonner";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -65,7 +67,17 @@ export default function RootLayout({
 
         gtag('config', 'G-BK1W9GTN3E');`}
       </Script>
-      <body className={`${geistMono.variable} antialiased`}>{children}</body>
+      <body className={`${geistMono.variable} antialiased`}>
+        <ThemeProvider
+          attribute="class"
+          defaultTheme="system"
+          enableSystem
+          disableTransitionOnChange
+        >
+          {children}
+          <Toaster />
+        </ThemeProvider>
+      </body>
     </html>
   );
 }
