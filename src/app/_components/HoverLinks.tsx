@@ -104,17 +104,22 @@ export function HoverLinks() {
   const isInView = useInView(ref, { once: true, margin: "0px 0px -100px 0px" });
   return (
     <>
-      <div ref={targetRef3} className="w-full">
+      <div ref={targetRef3} className="">
         <div className="">
-          <div className="bg-[url('/pexels-danny-meneses-340146-943096.jpg')] bg-cover bg-center h-75 sm:h-50 bg-fixed bg-no-repeat">
-            <div className="mx-auto max-w-4xl flex flex-col justify-center">
-              <div className="text-white gap-5 flex flex-col py-10 px-5">
+          <div className="bg-[url('/pexels-danny-meneses-340146-943096.jpg')] bg-cover bg-center bg-fixed bg-no-repeat h-screen">
+            <div className="mx-auto flex flex-col justify-center">
+              <div className="text-white gap-5 flex flex-col py-5 px-5">
                 <motion.h3
-                  className="text-4xl"
+                  className="text-4xl flex items-center gap-5"
                   initial={{ opacity: 0, y: 24 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.6, ease: "easeOut" }}
                 >
+                  <img
+                    src="/andy.jpg"
+                    alt=""
+                    className="aspect-5/4 max-h-[min(40vh,16rem)] w-50 sm:w-50 object-cover object-[center_20%] sm:aspect-21/14 sm:max-h-full sm:object-[center_10%] rounded-xl"
+                  />
                   Andrew Bliss
                 </motion.h3>
                 <motion.div
@@ -126,7 +131,7 @@ export function HoverLinks() {
                   <TypingWords
                     className="text-lg"
                     startNow
-                    text="Welcome to my portfolio website."
+                    text="Looking for a software engineer? I'm available for hire."
                   />
                 </motion.div>
                 <motion.p
@@ -140,138 +145,80 @@ export function HoverLinks() {
                     size={"xl"}
                     onClick={handleScroll}
                   >
-                    Begin your journey 👉
+                    Contact me 👉
                   </Button>
                 </motion.p>
               </div>
             </div>
           </div>
-          <div ref={targetRef} className="bg-zinc-900">
-            <div className="text-center py-20 px-5 mx-auto max-w-4xl bg-white">
-              <motion.div
-                ref={ref}
-                initial={{ opacity: 0, y: 24 }}
-                animate={
-                  isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 24 }
-                }
-                transition={{ duration: 0.6, ease: "easeOut" }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true, margin: "0px 0px -100px 0px" }}
-              >
-                <div className="flex justify-center flex-wrap gap-10">
-                  <h3 className="text-2xl sm:text-5xl">Let's work together!</h3>
-                  <p className="w-100">
-                    Experienced Full Stack Developer. Background in web
-                    development, apps, mobile, with a track record in optimized,
-                    responsive design.
-                  </p>
-
-                  <Card className="w-full">
-                    <CardHeader>
-                      <h2
-                        id="card-heading"
-                        className="text-xs font-medium uppercase tracking-widest text-zinc-500"
-                      >
-                        Contact
-                      </h2>
-                    </CardHeader>
-                    <CardContent>
-                      <div className="mt-4">
-                        <div className="flex flex-col gap-5 sm:flex-row sm:items-start ">
-                          <img
-                            src="/andy.jpg"
-                            alt=""
-                            className="aspect-5/4 max-h-[min(40vh,16rem)] w-75 sm:w-75 object-cover object-[center_20%] sm:aspect-21/14 sm:max-h-full sm:object-[center_10%] rounded-xl"
-                          />
-                          <div className="min-w-0">
-                            <p className="text-lg font-semibold text-zinc-950 sm:text-xl">
-                              {resume.name}
-                            </p>
-                            <p className="mt-0.5 text-sm font-medium text-zinc-700">
-                              {resume.bio}
-                            </p>
-                            <div className="mt-4 flex flex-col gap-2 text-sm text-zinc-700">
-                              <a
-                                href={`mailto:${resume.email}`}
-                                className="inline-flex w-fit items-center gap-2 text-zinc-900 underline-offset-4 hover:underline"
-                              >
-                                <Mail
-                                  size={16}
-                                  className="shrink-0 text-zinc-500"
-                                  aria-hidden
-                                />
-                                {resume.email}
-                              </a>
-                              <span className="inline-flex items-center gap-2 text-zinc-600">
-                                <MapPin
-                                  size={16}
-                                  className="shrink-0 text-zinc-400"
-                                  aria-hidden
-                                />
-                                {resume.address.city}, {resume.address.state}
-                              </span>
-                            </div>
-                          </div>
-                          <div className="flex shrink-0 flex-col gap-2 sm:items-end"></div>
-                        </div>
-                      </div>
-                    </CardContent>
-                    <CardFooter></CardFooter>
-                  </Card>
-
-                  <Card className="w-full">
-                    <CardHeader>
-                      <h2
-                        id="card-heading"
-                        className="text-xs font-medium uppercase tracking-widest text-zinc-500 pb-5"
-                      >
-                        Projects
-                      </h2>
-                      <div className="flex flex-col sm:flex-row gap-10 sm:items-center">
-                        <img
-                          src="/hover-illustration.svg"
-                          className="w-75 sm:w-50 border-2 rounded-2xl"
-                        />
-                        <nav className="flex flex-wrap gap-2 sm:gap-3">
-                          {siteLinks.map(
-                            ({ href, label, icon: Icon, variant }) => (
-                              <Link
-                                key={href}
-                                href={href}
-                                className={linkButtonClass[variant]}
-                              >
-                                <Icon
-                                  size={18}
-                                  className="shrink-0 opacity-90"
-                                  aria-hidden
-                                />
-                                {label}
-                              </Link>
-                            ),
-                          )}
-                        </nav>
-                      </div>
-                    </CardHeader>
-                  </Card>
-                </div>
-              </motion.div>
-            </div>
-            <div className="flex flex-col items-center gap-10 mx-auto max-w-4xl bg-white pb-10">
-              <div className="text-center">
-                <motion.h2
-                  ref={ref}
-                  className="text-5xl"
-                  initial={{ opacity: 0, y: 24 }}
-                  animate={
-                    isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 24 }
-                  }
-                  transition={{ duration: 0.6, ease: "easeOut" }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true, margin: "0px 0px -100px 0px" }}
-                >
-                  Blog
-                </motion.h2>
+          <div
+            ref={targetRef}
+            className="bg-zinc-900 p-5 sm:p-5 md:p-10 md:gap-10 flex flex-col"
+          >
+            <motion.div
+              ref={ref}
+              initial={{ opacity: 0, y: 24 }}
+              animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 24 }}
+              transition={{ duration: 0.6, ease: "easeOut" }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, margin: "0px 0px -100px 0px" }}
+            >
+              <div className="flex flex-col lg:flex-row gap-5 md:gap-10 max-w-5xl mx-auto py-10">
+                <Card className="flex-1">
+                  <CardHeader>
+                    <h2
+                      id="card-heading"
+                      className="text-xs font-medium uppercase tracking-widest text-zinc-500"
+                    >
+                      Let's work together!
+                    </h2>
+                  </CardHeader>
+                  <CardContent>
+                    <p className="">
+                      Experienced Software Engineer with a background in full
+                      stack web development. I love programming code to make
+                      apps that impress clients and users.
+                    </p>
+                  </CardContent>
+                  <CardFooter></CardFooter>
+                </Card>
+                <Card className="flex-1">
+                  <CardHeader>
+                    <h2
+                      id="card-heading"
+                      className="text-xs font-medium uppercase tracking-widest text-zinc-500 pb-5"
+                    >
+                      Projects
+                    </h2>
+                    <div className="flex flex-col sm:flex-row gap-10 sm:items-center">
+                      <img
+                        src="/hover-illustration.svg"
+                        className="w-75 sm:w-50 border-2 rounded-2xl"
+                      />
+                      <nav className="flex flex-wrap gap-2 sm:gap-3">
+                        {siteLinks.map(
+                          ({ href, label, icon: Icon, variant }) => (
+                            <Link
+                              key={href}
+                              href={href}
+                              className={linkButtonClass[variant]}
+                            >
+                              <Icon
+                                size={18}
+                                className="shrink-0 opacity-90"
+                                aria-hidden
+                              />
+                              {label}
+                            </Link>
+                          ),
+                        )}
+                      </nav>
+                    </div>
+                  </CardHeader>
+                </Card>
               </div>
+            </motion.div>
+            <div className="flex flex-col items-center gap-10 max-w-5xl mx-auto">
               <motion.div
                 ref={ref}
                 initial={{ opacity: 0, y: 24 }}
@@ -282,74 +229,15 @@ export function HoverLinks() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, margin: "0px 0px -100px 0px" }}
               >
-                <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-5 p-5">
-                  {blogPosts.map((post, index) => {
-                    return (
-                      <Card key={index}>
-                        <CardHeader className="h-32">
-                          <h3 className="text-base font-semibold leading-snug text-zinc-950 sm:text-lg">
-                            {post.title}
-                          </h3>
-                          <p className="mt-1.5 text-sm text-zinc-500">
-                            <time>{post.dateLabel}</time>
-                          </p>
-                        </CardHeader>
-                        <CardContent>
-                          <article className="max-w-full">
-                            <header></header>
-                            <div className="h-64 overflow-hidden">
-                              <p className="mt-4 text-sm leading-relaxed text-zinc-600 sm:text-base line-clamp-8">
-                                {post.body}
-                              </p>
-                            </div>
-                            <p className="mt-4 text-sm">
-                              <a
-                                href={post.href}
-                                className="font-medium text-zinc-900 underline-offset-4 hover:underline"
-                              >
-                                View article
-                              </a>
-                            </p>
-                          </article>
-                        </CardContent>
-                        <CardFooter></CardFooter>
-                      </Card>
-                    );
-                  })}
-                </div>
-              </motion.div>
-              <div className="text-center py-5">
-                <motion.h2
-                  ref={ref}
-                  className="text-5xl"
-                  initial={{ opacity: 0, y: 24 }}
-                  animate={
-                    isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 24 }
-                  }
-                  transition={{ duration: 0.6, ease: "easeOut" }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true, margin: "0px 0px -100px 0px" }}
-                >
-                  Portfolio
-                </motion.h2>
-              </div>
-              <motion.div
-                ref={ref}
-                initial={{ opacity: 0, y: 24 }}
-                animate={
-                  isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 24 }
-                }
-                transition={{ duration: 0.6, ease: "easeOut" }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true, margin: "0px 0px -100px 0px" }}
-              >
-                <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-5 p-5">
+                <h3 className="text-2xl font-bold text-white py-5">Projects</h3>
+
+                <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-5">
                   <Card>
                     <CardHeader>
                       <a href="/zero-fall">
                         <img
                           src="/screenshots/zero-fall.png"
-                          className="rounded-xl w-full h-44 aspect-video object-cover"
+                          className="rounded-xl h-44 aspect-video object-cover"
                         />
                       </a>
                     </CardHeader>
@@ -373,7 +261,7 @@ export function HoverLinks() {
                       <a href="https://tipodd.itch.io/godot-weather">
                         <img
                           src="https://img.itch.zone/aW1nLzI2OTk5Njc2LnBuZw==/315x250%23c/TKN80F.png"
-                          className="rounded-xl w-full"
+                          className="rounded-xl h-44 aspect-video object-cover"
                         />
                       </a>
                     </CardHeader>
@@ -395,19 +283,19 @@ export function HoverLinks() {
                     <CardHeader>
                       <a href="https://tipodd.itch.io/pixel-ui">
                         <img
-                          src="https://img.itch.zone/aW1nLzI2OTE5Mzg0LnBuZw==/315x250%23c/BxVVZ9.png"
-                          className="rounded-xl  w-full"
+                          src="/kana-balloons.png"
+                          className="rounded-xl h-44 aspect-video object-cover"
                         />
                       </a>
                     </CardHeader>
                     <CardContent>
                       <div className="">
-                        <a href="https://tipodd.itch.io/pixel-ui">
-                          <h3 className="text-2xl pb-2">UI Asset Packs</h3>
+                        <a href="https://tipodd.itch.io/kana-balloons">
+                          <h3 className="text-2xl pb-2">Kana Balloons</h3>
                         </a>
                         <p>
-                          This pack has all in one UI images. Everything comes
-                          with the png and aseprite files.
+                          Learn Japanese Hiragana and Katakana by poppong
+                          balloons.
                         </p>
                       </div>
                     </CardContent>
@@ -415,13 +303,60 @@ export function HoverLinks() {
                   </Card>
                 </div>
               </motion.div>
+
+              <motion.div
+                ref={ref}
+                initial={{ opacity: 0, y: 24 }}
+                animate={
+                  isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 24 }
+                }
+                transition={{ duration: 0.6, ease: "easeOut" }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, margin: "0px 0px -100px 0px" }}
+              >
+                <h3 className="text-2xl font-bold text-white py-5">
+                  <a href="/articles">Blog</a>
+                </h3>
+                <div className="flex flex-col gap-5">
+                  {blogPosts.map((post, index) => {
+                    return (
+                      <Card key={index} className="flex-1">
+                        <CardHeader className="">
+                          <h3 className="text-base font-semibold text-zinc-950 sm:text-lg">
+                            {post.title}
+                          </h3>
+                          <p className="mt-1.5 text-sm text-zinc-500">
+                            <time>{post.dateLabel}</time>
+                          </p>
+                        </CardHeader>
+                        <CardContent>
+                          <div className="overflow-hidden">
+                            <p className="text-sm text-zinc-600 sm:text-base">
+                              {post.body}
+                            </p>
+                          </div>
+                          <p className="text-sm">
+                            <a
+                              href={post.href}
+                              className="font-medium text-zinc-900 hover:underline"
+                            >
+                              View article
+                            </a>
+                          </p>
+                        </CardContent>
+                        <CardFooter></CardFooter>
+                      </Card>
+                    );
+                  })}
+                </div>
+              </motion.div>
             </div>
           </div>
         </div>
       </div>
-      <footer className="bg-black text-white px-5">
-        <div className="mx-auto py-12 max-w-4xl sm:px-5">
-          <div className="grid grid-cols-1 md:grid-cols-3">
+      <footer className="bg-black text-white">
+        <div className="mx-auto py-12 max-w-5xl px-5 md:px-10 lg:px-10 xl:px-0">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
             <div>
               <h3 className="mb-4 text-lg font-semibold ">Links</h3>
               <ul className="space-y-2">
