@@ -5,7 +5,7 @@ title: "Why are you a game dev?"
 tagline: "Because I love playing games and making them."
 authorSlug: "andrew-bliss"
 image: "https://storage.googleapis.com/blisscoder-0-public/blisscodedev/img/desk-top.webp"
-published: true
+published: false
 tags: ["game dev"]
 ---
 

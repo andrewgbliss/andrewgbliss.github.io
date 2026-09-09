@@ -5,7 +5,7 @@ title: "30 Day React Challenge"
 tagline: "Want to get better at React? Check out this challenge and get that daily practice in your workflow."
 authorSlug: "andrew-bliss"
 image: "https://storage.googleapis.com/blisscoder-0-public/blisscodedev/img/dashboard.jpg"
-published: true
+published: false
 tags: ["react", "javascript"]
 ---
 

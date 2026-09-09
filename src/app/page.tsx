@@ -1,9 +1,10 @@
 import { website } from "@/lib/website";
 import { Metadata, Viewport } from "next";
 import { HoverLinks } from "./_components/HoverLinks";
+import { getPublishedArticles } from "@/lib/data/articles";
 
 export const viewport: Viewport = {
-  themeColor: "#d4d4d8",
+  themeColor: "#ffffff",
 };
 
 export const metadata: Metadata = {
@@ -36,10 +37,18 @@ export const metadata: Metadata = {
   },
 };
 
-export default function Page() {
+export default async function Page() {
+  const articles = await getPublishedArticles();
+  const posts = articles.slice(0, 3).map(({ slug, title, date, tagline }) => ({
+    slug,
+    title,
+    date,
+    tagline,
+  }));
+
   return (
     <main className="min-h-screen w-full">
-      <HoverLinks />
+      <HoverLinks posts={posts} />
     </main>
   );
 }

@@ -14,7 +14,7 @@ export const mainResume: ResumeDocument = {
   email: "andrewgbliss@gmail.com",
   bio: `Software Engineer`,
   tagline:
-    "Software engineer with 8+ years of experience designing, building, and scaling production web applications. Specializes in React, Next.js, Node.js, and PostgreSQL/BigQuery-based data systems, with a track record of migrating legacy platforms to modern architectures and building real-time, high-throughput backend systems.",
+    "Experienced full-stack software engineer with a track record of many shipped successful web apps using React, TypeScript, Node.js, and PostgreSQL. Developer who likes to code, solve hard problems, has empathy to help anyone and mentor people.",
   aboutParagraphs: [
     "I'm a senior full-stack engineer based in Lehi, Utah, with a B.S. in Computer Science from Stevens-Henager College. Most of my recent work spans React, TypeScript, Next.js, Node, and PostgreSQL—alongside data systems like BigQuery—where I focus on performance, reliability, and features people actually use every day.",
     "Earlier in my career I spent years consulting: migrating legacy PHP applications to a modern Next.js stack, improving cost and velocity, and building solar-industry software in React and TypeScript that helped clients shorten sales cycles and grow revenue. I'm happiest when engineering decisions show up as clearer UX, stable releases, and measurable savings.",
@@ -39,9 +39,9 @@ export const mainResume: ResumeDocument = {
       to: "Current",
       skills: ["React", "Typescript", "Tailwind", "Next.Js", "PostgreSQL"],
       bulletpoints: [
-        "Led the migration of a legacy PHP system to a modern React/Next.js architecture, modernizing core platform workflows.",
-        "Architected and built a vehicle reconditioning system that lets dealership teams create tasks, capture photos, and push updates to seller APIs in real time.",
-        "Built a daily data aggregation pipeline spanning BigQuery and PostgreSQL, including table partitioning, materialized views, and indexing strategy, to keep dashboard queries fast as daily vehicle record volume grew.",
+        "Led migration of a legacy PHP system to React/Next.js, modernizing core platform workflows and improving maintainability.",
+        "Architected a vehicle reconditioning system enabling dealership teams to create tasks, capture photos, and sync updates to seller APIs in real time — adopted by 10 new dealerships per month.",
+        "Built a daily data pipeline across BigQuery and PostgreSQL — including table partitioning, materialized views, and indexing strategy — cutting dashboard query time by 75% as vehicle record volume scaled.",
       ],
     },
     {
@@ -52,8 +52,9 @@ export const mainResume: ResumeDocument = {
       to: "Sep, 2022",
       skills: ["React", "Typescript", "Tailwind", "Next.js", "PostgreSQL"],
       bulletpoints: [
-        "Led the transition from a legacy PHP system to a new solar appraisal platform built with React and Next.js, used by solar companies to manage and sell installation contracts.",
-        "Replaced a polling-based customer service system with a Node.js and Redis-backed queue, enabling real-time call and chat handling with no downtime for the support team..",
+        "Led the transition from a legacy PHP system to a solar appraisal platform built with React and Next.js, driving hundreds of new solar company sign-ups to manage and sell installation contracts.",
+        "Replaced a polling-based customer service system with a Node.js/Redis-backed queue, cutting customer wait times by 25% with zero downtime for the support team.",
+        "Built and shipped a custom proposal tool for solar companies to generate and send build proposals, increasing revenue by 10%.",
       ],
     },
   ],

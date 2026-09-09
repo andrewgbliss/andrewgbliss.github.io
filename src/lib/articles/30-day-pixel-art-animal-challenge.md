@@ -5,7 +5,7 @@ title: "30 Day Pixel Art Animal Challenge"
 tagline: "Want to get better at drawing pixel art animals? Check out this challenge and get that daily practice in your workflow."
 authorSlug: "andrew-bliss"
 image: "https://storage.googleapis.com/blisscoder-0-public/blisscodedev/img/dashboard.jpg"
-published: true
+published: false
 tags: ["pixel art"]
 ---
 

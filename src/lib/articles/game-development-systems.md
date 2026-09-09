@@ -5,7 +5,7 @@ title: "Game Development Systems"
 tagline: "Developing systems for your game"
 authorSlug: "andrew-bliss"
 image: "/Stan-Bg-32x32.png"
-published: true
+published: false
 tags: ["game dev"]
 ---
 
