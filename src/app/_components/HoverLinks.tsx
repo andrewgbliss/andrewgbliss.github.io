@@ -7,6 +7,7 @@ import { Button } from "@/components/ui/button";
 import { DarkModeToggle } from "@/components/buttons/dark-mode-toggle";
 import { useRef } from "react";
 import { TypingWords } from "./TypingWords";
+import { mainPortfolio } from "@/lib/portfolio/main_portfolio";
 
 export type HomePost = {
   slug: string;
@@ -73,12 +74,7 @@ function formatDate(date: string) {
 
 export function HoverLinks({ posts }: { posts: HomePost[] }) {
   const topRef = useRef<HTMLDivElement>(null);
-  const contactRef = useRef<HTMLDivElement>(null);
-
-  const handleScrollToContact = (e: React.MouseEvent<HTMLButtonElement>) => {
-    e.preventDefault();
-    contactRef.current?.scrollIntoView({ behavior: "smooth" });
-  };
+  const featuredProject = mainPortfolio.projects[0];
 
   const handleScrollToTop = (e: React.MouseEvent<HTMLButtonElement>) => {
     e.preventDefault();
@@ -102,44 +98,61 @@ export function HoverLinks({ posts }: { posts: HomePost[] }) {
                 </h1>
                 <DarkModeToggle />
               </div>
-              <div className="mt-3 min-h-16 sm:min-h-10">
-                <TypingWords
-                  className="text-base leading-relaxed sm:text-lg"
-                  startNow
-                  text="Looking for a software engineer? I'm available for hire."
-                />
-              </div>
-              <Button
-                className="mt-4 w-full cursor-pointer rounded-none border-black bg-black text-white hover:bg-black/80 dark:border-white dark:bg-white dark:text-black dark:hover:bg-white/80 sm:w-auto"
-                size="xl"
-                onClick={handleScrollToContact}
-              >
-                Contact me
-              </Button>
+              <p className="mt-3 text-base leading-relaxed sm:text-lg">
+                Experienced software engineer with a track record of many
+                shipped successful web apps using React, TypeScript, Node.js,
+                and PostgreSQL. Developer who likes to code, solve hard
+                problems, has empathy to help anyone and mentor people.
+              </p>
+              <nav className="mt-4 flex flex-wrap gap-2">
+                {siteLinks.map(({ href, label, variant }) => (
+                  <Link
+                    key={href}
+                    href={href}
+                    className={linkButtonClass[variant]}
+                  >
+                    {label}
+                  </Link>
+                ))}
+              </nav>
             </div>
           </div>
         </header>
 
-        <section
-          ref={contactRef}
-          className="border-b border-black py-10 dark:border-white"
-        >
-          <p className="font-serif text-xs uppercase tracking-[0.25em]">
-            Let&apos;s work together
-          </p>
-          <p className="mt-4 text-base leading-relaxed sm:text-lg">
-            Experienced software engineer with a track record of many shipped
-            successful web apps using React, TypeScript, Node.js, and
-            PostgreSQL. Developer who likes to code, solve hard problems, has
-            empathy to help anyone and mentor people.
-          </p>
-          <nav className="mt-6 flex flex-wrap gap-2">
-            {siteLinks.map(({ href, label, variant }) => (
-              <Link key={href} href={href} className={linkButtonClass[variant]}>
-                {label}
-              </Link>
-            ))}
-          </nav>
+        <section className="border-b border-black py-6 dark:border-white">
+          <div className="mb-4 flex items-baseline justify-between">
+            <h2 className="font-serif text-xl sm:text-2xl">
+              <Link href="/portfolio">Portfolio</Link>
+            </h2>
+            <Link
+              href="/portfolio"
+              className="text-sm underline-offset-4 hover:underline"
+            >
+              See portfolio
+            </Link>
+          </div>
+
+          {featuredProject ? (
+            <article className="flex gap-4">
+              <a href={featuredProject.url} className="shrink-0">
+                <img
+                  src={featuredProject.image}
+                  alt=""
+                  className="h-20 w-28 object-cover sm:h-24 sm:w-36"
+                />
+              </a>
+              <div className="min-w-0">
+                <h3 className="font-serif text-lg leading-snug">
+                  <a href={featuredProject.url} className="hover:underline">
+                    {featuredProject.name}
+                  </a>
+                </h3>
+                <p className="mt-1 line-clamp-2 text-sm leading-relaxed">
+                  {featuredProject.description}
+                </p>
+              </div>
+            </article>
+          ) : null}
         </section>
 
         <section className="py-10">
