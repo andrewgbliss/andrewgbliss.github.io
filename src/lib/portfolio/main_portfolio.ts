@@ -32,5 +32,19 @@ export const mainPortfolio = {
       image: "/img/projects/steam-game-landing-template.png",
       url: "https://andrewgbliss.com/zero-fall",
     },
+    {
+      name: "Inventory Manager",
+      description:
+        "Upload images to create structured inventory data in json format",
+      image: "/img/projects/inventory-manager.png",
+      url: "https://inventory-manager-bd9n6xs6f-andrewgbliss-s-team.vercel.app/",
+    },
+    {
+      name: "Kanban Board",
+      description:
+        "A kanban board built with React, TypeScript, and Tailwind CSS.",
+      image: "/img/projects/kanban-board.png",
+      url: "https://kanban-board-rust-theta-61.vercel.app/",
+    },
   ],
 };
