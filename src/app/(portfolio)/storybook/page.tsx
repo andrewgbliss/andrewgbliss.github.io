@@ -14,7 +14,6 @@ import {
   Plus,
 } from "lucide-react";
 import { Metadata, Viewport } from "next";
-import { defaultResumeHref } from "@/lib/resume";
 import { website } from "@/lib/website";
 
 export const viewport: Viewport = {
@@ -92,24 +91,6 @@ const mainPages: Array<ShowcaseCard> = [
     label: "Portfolio",
     description: "Project and work highlights.",
     icon: Briefcase,
-  },
-  {
-    href: defaultResumeHref,
-    label: "Resume",
-    description: "Résumé view (default variant).",
-    icon: FileText,
-  },
-  {
-    href: "/resume",
-    label: "Resume (redirect)",
-    description: "Short redirect to the default résumé slug.",
-    icon: FileText,
-  },
-  {
-    href: "/jsondb",
-    label: "JSON DB",
-    description: "A json database for quick prototypes",
-    icon: List,
   },
   {
     href: "/dashboard",

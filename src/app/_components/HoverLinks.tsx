@@ -1,12 +1,10 @@
 "use client";
 
 import Link from "next/link";
-import { defaultResumeHref } from "@/lib/resume";
 import { website } from "@/lib/website";
 import { Button } from "@/components/ui/button";
 import { DarkModeToggle } from "@/components/buttons/dark-mode-toggle";
 import { useRef } from "react";
-import { TypingWords } from "./TypingWords";
 import { mainPortfolio } from "@/lib/portfolio/main_portfolio";
 
 export type HomePost = {
@@ -36,11 +34,6 @@ const siteLinks: Array<SiteLink> = [
   {
     href: "https://www.linkedin.com/in/andrewgbliss/",
     label: "LinkedIn",
-    variant: "outline",
-  },
-  {
-    href: defaultResumeHref,
-    label: "Resume",
     variant: "outline",
   },
 ];
