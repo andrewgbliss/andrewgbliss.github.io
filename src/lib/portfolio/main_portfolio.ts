@@ -46,5 +46,12 @@ export const mainPortfolio = {
       image: "/img/projects/kanban-board.png",
       url: "https://kanban-board-rust-theta-61.vercel.app/",
     },
+    {
+      name: "Finances",
+      description:
+        "A finance tracker built with React, TypeScript, and Tailwind CSS.",
+      image: "/img/projects/finances.png",
+      url: "https://finances-ja5ivg4x1-andrewgbliss-s-team.vercel.app/",
+    },
   ],
 };
